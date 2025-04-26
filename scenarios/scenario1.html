@@ -25,7 +25,48 @@
 <a href="../index.html">Return Home</a>
 
 <script>
-//JavaScript will be added clearly in the next step.
+function selectAnswer(choice) {
+    let contentDiv = document.getElementById('adaptiveContent');
+    if (choice === 'A') {
+        contentDiv.innerHTML = `
+        <p><strong>Aliens reply skeptically:</strong> "Cute dinosaur nuggets? Planet Xylo markets edible crystal nuggets that glow. Can Earth dinosaur nuggets really compete?"</p>
+        <button onclick="secondLevel('A')">A: "Probably not—Xylo's nugget technology sounds amazing."</button><br><br>
+        <button onclick="secondLevel('B')">B: "Interesting! Could you share specifically what impresses you about Xylo's crystal nuggets?"</button><br><br>
+        <button onclick="secondLevel('C')">C: "Our nuggets cater explicitly to nostalgia—distinctly differentiating us strongly from Xylo."</button><br><br>
+        <button onclick="secondLevel('D')">D: "Our cooking includes meteor-shaped sauce dispensers, creating immersive dinosaur-extinction experiences."</button><br><br>
+        `;
+    } else if (choice === 'B') {
+        contentDiv.innerHTML = `
+        <p><strong>Aliens clarify further:</strong> "We prefer cuisine experiences that emphasize interactivity and visual appeal. Can Earth's offerings match these expectations?"</p>
+        <button onclick="secondLevel('A')">A: "Absolutely! We have interactive dining examples backed by proven customer satisfaction metrics."</button><br><br>
+        <button onclick="secondLevel('B')">B: "Please clarify further—what exactly does 'interactive' dining involve for you?"</button><br><br>
+        <button onclick="secondLevel('C')">C: "We offer cooking shows and products more interactive and engaging compared to other planets."</button><br><br>
+        <button onclick="secondLevel('D')">D: "Our sophisticated analytics tools enhance interactivity by tracking user reactions precisely."</button><br><br>
+        `;
+    } else if (choice === 'C') {
+        contentDiv.innerHTML = `
+        <p><strong>Aliens appear intrigued:</strong> "Interesting idea about cookware and shows. How do they clearly compare to other galactic merchandise offerings?"</p>
+        <button onclick="secondLevel('A')">A: "We have detailed comparative data clearly showing our cookware’s popularity."</button><br><br>
+        <button onclick="secondLevel('B')">B: "Would a live demo of our merchandise alongside competitor products help you see Earth’s clear advantage?"</button><br><br>
+        <button onclick="secondLevel('C')">C: "Can you share exactly which competitor offers you are most interested in comparing against?"</button><br><br>
+        <button onclick="secondLevel('D')">D: "Our internal analytics clearly show our products drastically surpass competitors by user demand."</button><br><br>
+        `;
+    } else if (choice === 'D') {
+        contentDiv.innerHTML = `
+        <p><strong>Aliens look skeptical:</strong> "We've observed Earth foods, they don’t glow or involve diamond soups. Could you clarify this discrepancy?"</p>
+        <button onclick="secondLevel('A')">A: "You caught us! That was overly ambitious humor; let’s discuss real Earth culinary strengths clearly instead."</button><br><br>
+        <button onclick="secondLevel('B')">B: "Our mistake—we meant metaphorically. Could we restart clearly by asking your culinary priorities?"</button><br><br>
+        <button onclick="secondLevel('C')">C: "Perhaps we were overly enthusiastic; allow us clearly to demonstrate Earth's realistic offerings."</button><br><br>
+        <button onclick="secondLevel('D')">D: "Oops! Let's clearly reset our conversation to align exactly with your expectations."</button><br><br>
+        `;
+    }
+}
+
+function secondLevel(choice) {
+    let contentDiv = document.getElementById('adaptiveContent');
+    contentDiv.innerHTML += `<br><em>Your choice has been recorded. (Adaptive scoring logic will be added clearly in the next steps.) Please proceed to the next scenario or return home.</em>`;
+    contentDiv.innerHTML += `<br><br><a href="../index.html">Return to Homepage</a>`;
+}
 </script>
 
 </body>
