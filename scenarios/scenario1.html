@@ -1,89 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scenario 1: Alien Cuisine Negotiation</title>
 </head>
-
 <body>
-    <div id="scenarioContent">
-        <h2>Scenario 1: Alien Cuisine Negotiation</h2>
-        <p>Aliens arrive indicating tentative interest—they've experienced impressive culinary options elsewhere like edible crystals and glowing drinks. They express hesitation: </p>
-        <blockquote>"Earth cuisine appears somewhat underwhelming compared to other planets we've encountered. Can you please explain clearly what unique culinary advantages Earth might offer?"</blockquote>
+<div id="scenario" style="font-family:Arial, sans-serif; line-height:1.6; max-width:700px; margin:auto; padding:20px;">
+    <h2>Scenario 1: Alien Cuisine Negotiation</h2>
+    <p>An alien delegation arrives, indicating potential interest in investing in Earth's culinary culture. However, they express skepticism:</p>
+    <blockquote><em>"We've explored impressive culinary options elsewhere—edible crystal meals, luminous beverages, and more. Frankly, Earth's offerings seem less exciting in comparison. What distinct culinary advantage can Earth provide?"</em></blockquote>
 
-        <button onclick="question1('A',false)">"We offer dinosaur-shaped chicken nuggets—a unique blend of paleontology and cuisine unlike anywhere else."</button><br><br>
-        <button onclick="question1('B',true)">"Could you share more detail about culinary experiences you've already appreciated elsewhere, and what precisely you value in a cuisine?"</button><br><br>
-        <button onclick="question1('C',false)">"Our cookware products and food-related shows clearly outperform similar offerings throughout the galaxy."</button><br><br>
-        <button onclick="question1('D',true)">"We possess detailed analytic tools clearly demonstrating culinary customer satisfaction and preferences."</button><br><br>
-    </div>
+    <button onclick="firstAnswer('A', false)">"We offer chicken nuggets shaped like dinosaurs—a unique combination of cuisine and Earth's paleontological history."</button><br><br>
+    <button onclick="firstAnswer('B', true)">"Could you share what culinary experiences have impressed you previously, and specifically outline what you're seeking now?"</button><br><br>
+    <button onclick="firstAnswer('C', false)">"Our cookware merchandise and food-related entertainment are clearly superior to competitors across the galaxy."</button><br><br>
+    <button onclick="firstAnswer('D', true)">"We utilize advanced analytics to precisely measure dining satisfaction and preferences, clearly demonstrating our strengths."</button><br><br>
+</div>
 
-    <script>
-        let content = document.getElementById('scenarioContent');
-        let score = 0;
+<script>
+let scenario=document.getElementById('scenario'); let score=0;
 
-        function question1(choice, good) {
-            if (good) { score++; }
-            content.innerHTML = `
-            <p><strong>Aliens clarify further:</strong> "We specifically prefer culinary experiences that are interactive and visually enriching. Can Earth's offerings match or exceed that?"</p>
-            <button onclick="question2(true)">Offer examples of Earth's interactive and visually-appealing cuisines backed by validated customer analytics.</button><br><br>
-            <button onclick="question2(true)">Request aliens for more detailed clarification about their interactive visual dining expectations.</button><br><br>
-            <button onclick="question2(false)">Claim Earth's culinary interactivity must be superior without providing tangible evidence.</button><br><br>
-            <button onclick="question2(false)">Admit cautiously that Earth might initially fall short of alien culinary expectations.</button><br><br>`;
-        }
+function firstAnswer(choice,good){
+    if(good){score++;}
+    scenario.innerHTML=`<p><strong>Aliens clarify more clearly:</strong> "We prioritize culinary experiences that are vividly interactive and visually engaging. How precisely does Earth's cuisine match this expectation?"</p>
+    <button onclick="secondAnswer(true)">Provide concrete examples of Earth's dining experiences that emphasize vivid interactivity, supported by proven customer satisfaction data.</button><br><br>
+    <button onclick="secondAnswer(true)">Request more details about what 'interactive' and 'visually appealing' specifically mean to the aliens, to align precisely with their expectations.</button><br><br>
+    <button onclick="secondAnswer(false)">Assure—without presenting concrete evidence—that Earth's dining interactivity surpasses other known planets.</button><br><br>
+    <button onclick="secondAnswer(false)">Admit cautiously that Earth currently might not yet meet the high visual interactivity standards they have encountered elsewhere.</button><br><br>`;
+}
 
-        function question2(good) {
-            if (good) { score++; }
-            content.innerHTML = `
-            <p><strong>Aliens question:</strong> "How precisely does Earth validate its culinary innovations to ensure customer needs are consistently met?"</p>
-            <button onclick="question3(true)">Show detailed analytic-based reports and case studies clearly illustrating customer satisfaction.</button><br><br>
-            <button onclick="question3(true)">Provide immediate analytic demonstration validating culinary customer satisfaction in real-time.</button><br><br>
-            <button onclick="question3(false)">Suggest validation is unnecessary, assuming aliens will already trust Earth's culinary methods.</button><br><br>
-            <button onclick="question3(false)">Acknowledge the limitations in current validation clearly, asking aliens how they prefer validation demonstrated.</button><br><br>`;
-        }
+function secondAnswer(good){
+    if(good){score++;}
+    scenario.innerHTML=`<p><strong>The aliens ask thoughtfully:</strong> "How does Earth validate its culinary innovations to ensure they indeed meet customer desires effectively?"</p>
+    <button onclick="thirdAnswer(true)">Present detailed, clearly structured case studies demonstrating customer satisfaction and measurable positive outcomes.</button><br><br>
+    <button onclick="thirdAnswer(true)">Offer a live demonstration of the analytics tools used to continuously validate customer satisfaction with our cuisine.</button><br><br>
+    <button onclick="thirdAnswer(false)">Suggest validation isn't vital, believing aliens will trust Earth's culinary reputation without clear evidence.</button><br><br>
+    <button onclick="thirdAnswer(false)">Acknowledge limitations in Earth's current validation process, asking what validation methods aliens prefer.</button><br><br>`;
+}
 
-        function question3(good) {
-            if (good) { score++; }
-            content.innerHTML = `
-            <p><strong>Aliens, showing growing interest, say:</strong> "Perhaps we could directly experience Earth's culinary methods to further evaluate suitability?"</p>
-            <button onclick="question4(true)">Offer an immediate, interactive culinary experience demonstration tailored exactly to alien expectations.</button><br><br>
-            <button onclick="question4(true)">Clearly arrange a structured, tailored demo session soon to ensure precise alignment to alien standards.</button><br><br>
-            <button onclick="question4(false)">Suggest, without coordination, aliens independently contact restaurants to seek demonstrations themselves.</button><br><br>
-            <button onclick="question4(false)">Caution aliens to adjust lower expectations, indicating Earth's culinary offerings might require more development first.</button><br><br>`;
-        }
+function thirdAnswer(good){
+    if(good){score++;}
+    scenario.innerHTML=`<p><strong>Aliens now inquire further:</strong> "Could we experience firsthand Earth's culinary innovations to assess alignment with our preferences?"</p>
+    <button onclick="fourthAnswer(true)">Immediately arrange a carefully tailored, structured interactive dining demonstration precisely aligned with alien expectations.</button><br><br>
+    <button onclick="fourthAnswer(true)">Offer to schedule a clearly coordinated demonstration session designed explicitly around the aliens' interests.</button><br><br>
+    <button onclick="fourthAnswer(false)">Suggest aliens independently contact local restaurants to arrange demonstrations themselves, without your direct management.</button><br><br>
+    <button onclick="fourthAnswer(false)">Encourage the aliens to lower their initial expectations, acknowledging clearly that Earth's demonstrations may require additional preparation.</button><br><br>`;
+}
 
-        function question4(good) {
-            if (good) { score++; }
-            if (score >= 3) {
-                content.innerHTML = `
-                <p><strong>Aliens, highly satisfied, respond:</strong> "We greatly appreciate your structured approach. What's clearly your proposed next step to formalize our potential collaboration?"</p>
-                <button onclick="finalGood()">Provide a carefully structured action plan outlining clear next steps toward a formal agreement.</button><br><br>
-                <button onclick="finalGood()">Present a detailed partnership timeline explicitly aligning with aliens' priorities and your offered solutions.</button><br><br>`;
-            } else {
-                content.innerHTML = `
-                <p><strong>Aliens, cautious, respond:</strong> "We sense there may still be some gaps based on earlier discussions. Could you please clearly clarify how Earth's offerings specifically align to our stated needs and criteria?"</p>
-                <button onclick="finalCaution()">Propose a carefully structured follow-up session explicitly designed to address remaining concerns.</button><br><br>
-                <button onclick="finalCaution()">Clearly acknowledge areas of previous ambiguity, and suggest resetting the discussion via structured next steps.</button><br><br>`;
-            }
-        }
+function fourthAnswer(good){
+    if(good){score++;}
+    if(score>=3){
+        scenario.innerHTML=`<p><strong>The aliens respond positively and professionally:</strong> "We appreciate your structured and clear communication throughout this conversation. Could you now outline precise next steps toward formalizing our potential collaboration?"</p>
+        <button onclick="finalPositive()">Provide a thoroughly detailed, structured action plan explicitly outlining collaborative next steps.</button><br><br>
+        <button onclick="finalPositive()">Present a clear timeline and deliverables carefully matching the aliens' clearly articulated expectations.</button><br><br>`;
+    }else{
+        scenario.innerHTML=`<p><strong>The aliens communicate some hesitation:</strong> "While grateful for the conversation, we have remaining reservations based on your earlier responses. Could you clearly clarify how precisely Earth's offerings align with our stated priorities?"</p>
+        <button onclick="finalNeutral()">Propose a structured follow-up meeting thoughtfully designed to specifically address and clarify lingering concerns.</button><br><br>
+        <button onclick="finalNeutral()">Acknowledge previous shortcomings in clarity, suggesting we reset the conversation with appropriately structured next steps.</button><br><br>`;
+    }
+}
 
-        function finalGood() {
-            content.innerHTML = `
-            <p><strong>Aliens delighted:</strong> "We are thoroughly impressed with your structured and professional approach. We certainly look forward to finalizing our collaboration."</p>
-            <button onclick="nextScenario()">Proceed directly to Scenario 2</button>`;
-        }
+function finalPositive(){
+    scenario.innerHTML=`<p><strong>Aliens, thoroughly satisfied, conclude:</strong> "Your structured, thorough approach clearly matches our expectations. We're eager to proceed further."</p>
+    <button onclick="nextScenario()">Proceed directly to Scenario 2</button>`;
+}
 
-        function finalCaution() {
-            content.innerHTML = `
-            <p><strong>Aliens appreciative but reserved:</strong> "We do appreciate your thoughtful approach. However, further careful consideration is required before we formally commit to collaboration."</p>
-            <button onclick="nextScenario()">Proceed carefully to Scenario 2</button>`;
-        }
+function finalNeutral(){
+    scenario.innerHTML=`<p><strong>Aliens, appreciative but cautious, respond thoughtfully:</strong> "Your thoughtful reconsideration is noted clearly. Further careful reflection will be required before we proceed formally."</p>
+    <button onclick="nextScenario()">Proceed carefully to Scenario 2</button>`;
+}
 
-        function nextScenario() {
-            location.href = 'scenario2.html';
-        }
-    </script>
+function nextScenario(){
+    location.href='scenario2.html';
+}
+</script>
+
 </body>
-
 </html>
