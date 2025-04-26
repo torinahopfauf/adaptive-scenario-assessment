@@ -10,7 +10,27 @@
     <h1>Adaptive Scenario-Based Assessment Prototype</h1>
 
     <div id="assessment-container">
-        <!-- Scenario content and interactive buttons will clearly go here next -->
+       <h2>Scenario 1: Alien Invasion Negotiation</h2>
+
+<p>Aliens arrive on Earth and are interested—but unsure—about investing in Earth's global culture. They've seen impressive culinary offerings on other planets, like edible crystals and glowing beverages. During initial discussions, your alien contact is skeptical and asks:</p>
+
+<p><strong>"Earth cuisine seems underwhelming. Some planets offer edible crystals and glowing beverages. What culinary advantage could Earth possibly have?"</strong></p>
+
+<button onclick="selectAnswer('A')">A. "Our food might seem ordinary—but we have chicken nuggets shaped like dinosaurs. Nobody else in this galaxy merges poultry and paleontology."</button><br><br>
+
+<button onclick="selectAnswer('B')">B. "Can you tell me more about what culinary experiences impressed you on other planets, and what your group seeks most in galactic cuisine?"</button><br><br>
+
+<button onclick="selectAnswer('C')">C. "Forget cuisine. Our themed cookware merchandise and cooking shows clearly surpass edible crystals and glowing beverages."</button><br><br>
+
+<button onclick="selectAnswer('D')">D. "You're wrong there, alien friends! We exclusively eat glowing lunar moss sandwiches and edible diamond soups."</button><br><br>
+
+<div id="answer-response"></div>
+
+<script>
+function selectAnswer(choice) {
+    document.getElementById('answer-response').innerHTML = "You selected answer " + choice + ". (We'll add adaptive logic next!)";
+}
+</script>
     </div>
 
 </body>
