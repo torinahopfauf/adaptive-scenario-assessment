@@ -8,330 +8,83 @@
 <body>
     <h1>Adaptive Scenario-Based Assessment Prototype</h1>
 
-<!-- SCENARIO 1 -->
-<h2>Scenario 1: Alien Invasion Negotiation</h2>
-<p>Aliens arrive on Earth and are skeptical about Earth's cuisine offerings:</p>
-<button onclick="selectAnswer('A')">A. Dinosaur-shaped chicken nuggets.</button><br><br>
-<button onclick="selectAnswer('B')">B. Ask aliens about their interests.</button><br><br>
-<button onclick="selectAnswer('C')">C. Highlight cookware merchandise.</button><br><br>
-<button onclick="selectAnswer('D')">D. Claim we eat glowing sandwiches.</button><br><br>
+    <!-- SCENARIO 1 -->
+    <h2>Scenario 1: Alien Invasion Negotiation</h2>
+    <p>Aliens arrive skeptical about Earth's cuisine:</p>
+    <button onclick="selectAnswer1('A')">A. Dinosaur-shaped chicken nuggets.</button><br><br>
+    <button onclick="selectAnswer1('B')">B. Ask aliens about interests.</button><br><br>
+    <button onclick="selectAnswer1('C')">C. Highlight cookware merchandise.</button><br><br>
+    <button onclick="selectAnswer1('D')">D. Claim we eat glowing sandwiches.</button><br><br>
 
-<div id="next-step-1"></div>
+    <div id="next-step-1"></div>
 
-<script>
-function selectAnswer(choice) {
-    let responseArea = document.getElementById('next-step-1');
-    if(choice === 'A'){
-        responseArea.innerHTML = `
-        <p><strong>Question 2C:</strong> Aliens say Xylo's edible glow crystal nuggets already impress them. How respond?</p>
-        <button onclick="scenario1Question2C('A')">A. Admit Xylo is better.</button><br><br>
-        <button onclick="scenario1Question2C('B')">B. Ask specifically about Xylo.</button><br><br>
-        <button onclick="scenario1Question2C('C')">C. For nostalgia, dinosaurs are better.</button><br><br>
-        <button onclick="scenario1Question2C('D')">D. Highlight extinction-themed experiences.</button><br><br>
-        <div id="response-1-2C"></div>`;
-    } else if(choice === 'B'){
-        responseArea.innerHTML = `
-        <p><strong>Question 2A:</strong> Aliens like luminous foods. Can Earth match this?</p>
-        <button onclick="scenario1Question2A('A')">A. Beige food tastes better.</button><br><br>
-        <button onclick="scenario1Question2A('B')">B. Demonstrate interactive dining.</button><br><br>
-        <button onclick="scenario1Question2A('C')">C. LED tables, minor risk.</button><br><br>
-        <button onclick="scenario1Question2A('D')">D. Bright colored cupcakes.</button><br><br>
-        <div id="response-1-2A"></div>`;
-    } else if(choice === 'C'){
-        responseArea.innerHTML = `
-        <p><strong>Question 2B:</strong> Can your entertaining approach comply with dietary energy regulations?</p>
-        <button onclick="scenario1Question2B('A')">A. Maybe invented sensors recently.</button><br><br>
-        <button onclick="scenario1Question2B('B')">B. Clarify compliance standards.</button><br><br>
-        <button onclick="scenario1Question2B('C')">C. Tiny printed disclaimers.</button><br><br>
-        <button onclick="scenario1Question2B('D')">D. Chef verbal promises.</button><br><br>
-        <div id="response-1-2B"></div>`;
-    } else if(choice === 'D'){
-        responseArea.innerHTML = `
-        <p><strong>Question 2D:</strong> Aliens don't believe false claims. Address honesty concern:</p>
-        <button onclick="scenario1Question2D('A')">A. Trust overrated.</button><br><br>
-        <button onclick="scenario1Question2D('B')">B. Integrity matters; restart discussion.</button><br><br>
-        <button onclick="scenario1Question2D('C')">C. Apologize—humor misunderstood.</button><br><br>
-        <button onclick="scenario1Question2D('D')">D. We’re better anyway.</button><br><br>
-        <div id="response-1-2D"></div>`;
-    }
-}
-//Scenario 1 detailed response for example:
-function scenario1Question2A(choice){
-   let r = document.getElementById('response-1-2A');
-   if(choice==='A'){r.innerHTML="A (Wrong): Dismissive. Alien interest not addressed.";}
-   if(choice==='B'){r.innerHTML="B (Best): Excellent demonstration! Clear and engaging.";}
-   if(choice==='C'){r.innerHTML="C (Better): Creative, safety concerns not addressed explicitly.";}
-   if(choice==='D'){r.innerHTML="D (Good): Visually interesting, limited differentiation.";}
-}
-//Similarly, explicitly implement the rest of your scenario1Question2B/C/D functions here with detailed messages.
-
-//SCENARIOS 2, 3, and 4 follow exactly same structure below, clearly implement as Scenario 1 examples.
     <!-- SCENARIO 2 -->
-<h2>Scenario 2: The Cheesy Startup</h2>
-<p>A big client hesitates switching to your innovative online cheese service due to freshness concerns.</p>
-<p><strong>"Why risk buying cheeses online instead of locally?"</strong></p>
+    <h2>Scenario 2: The Cheesy Startup</h2>
+    <p>Client hesitating about online cheese freshness:</p>
+    <button onclick="selectAnswer2('A')">A. Highlight drone delivery.</button><br><br>
+    <button onclick="selectAnswer2('B')">B. Clients avoid commute traffic.</button><br><br>
+    <button onclick="selectAnswer2('C')">C. Provide detailed logistics data.</button><br><br>
+    <button onclick="selectAnswer2('D')">D. Freshness is overrated.</button><br><br>
 
-<button onclick="selectAnswer2('A')">A. Highlight our cheese-drones delivery.</button><br><br>
-<button onclick="selectAnswer2('B')">B. Clients avoiding traffic favor innovations.</button><br><br>
-<button onclick="selectAnswer2('C')">C. Offer detailed logistics data.</button><br><br>
-<button onclick="selectAnswer2('D')">D. Freshness isn't hugely important.</button><br><br>
+    <div id="next-step-2"></div>
 
-<div id="next-step-2"></div>
+    <!-- SCENARIO 3 -->
+    <h2>Scenario 3: Celebrity Pet Influencer Agency</h2>
+    <p>Client concerned about influencer-cat compliance:</p>
+    <button onclick="selectAnswer3('A')">A. Cuteness overrides rules.</button><br><br>
+    <button onclick="selectAnswer3('B')">B. Clarify compliance rules first.</button><br><br>
+    <button onclick="selectAnswer3('C')">C. Completed pet regulations training.</button><br><br>
+    <button onclick="selectAnswer3('D')">D. Challenge outdated regulations publicly.</button><br><br>
 
-<script>
-//Scenario 2 First-Level Response
-function selectAnswer2(choice) {
-    let responseArea = document.getElementById('next-step-2');
-
-    if(choice === 'A'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 2: Question 2C</strong> Client doubt drones feasibility explicitly. Your response?</p>
-        <button onclick="scenario2Question2C('A')">A. Drones are cool—don't worry about details.</button><br><br>
-        <button onclick="scenario2Question2C('B')">B. Clarify reliability metrics that matter.</button><br><br>
-        <button onclick="scenario2Question2C('C')">C. Assume it's reliable enough.</button><br><br>
-        <button onclick="scenario2Question2C('D')">D. Guarantee via emoji approval.</button><br><br>
-        <div id="response-2-2C"></div>`;
-    } else if(choice === 'B'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 2: Question 2B</strong> Client curious what they gain explicitly. Your clear response:</p>
-        <button onclick="scenario2Question2B('A')">A. Cool cheese packaging by mail.</button><br><br>
-        <button onclick="scenario2Question2B('B')">B. Confirm sourcing and quality preferences explicitly.</button><br><br>
-        <button onclick="scenario2Question2B('C')">C. Our cheese simply tastes better.</button><br><br>
-        <button onclick="scenario2Question2B('D')">D. Local shop is overrated.</button><br><br>
-        <div id="response-2-2B"></div>`;
-    } else if(choice === 'C'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 2: Question 2A</strong> Client wonders explicitly about compliance demonstration.</p>
-        <button onclick="scenario2Question2A('A')">A. Rules optional online.</button><br><br>
-        <button onclick="scenario2Question2A('B')">B. Detail explicitly how our protocols exceed guidelines.</button><br><br>
-        <button onclick="scenario2Question2A('C')">C. Cheeses tagged as 'probably compliant'.</button><br><br>
-        <button onclick="scenario2Question2A('D')">D. Compliance via emoji.</button><br><br>
-        <div id="response-2-2A"></div>`;
-    } else if(choice === 'D'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 2: Question 2D</strong> Client concerned about our dismissiveness.</p>
-        <button onclick="scenario2Question2D('A')">A. Results matter more than detail.</button><br><br>
-        <button onclick="scenario2Question2D('B')">B. You're right; clarify freshness standards explicitly.</button><br><br>
-        <button onclick="scenario2Question2D('C')">C. Freshness overrated anyway.</button><br><br>
-        <button onclick="scenario2Question2D('D')">D. Apologies for misunderstanding.</button><br><br>
-        <div id="response-2-2D"></div>`;
-    }
-}
-
-
-//Scenario 2 - Explicit detailed feedback messages provided for each second-level question:
-
-function scenario2Question2A(choice){
-    let r = document.getElementById('response-2-2A');
-    if(choice==='A'){r.innerHTML="A (Wrong): Explicitly disregarding compliance damages credibility—avoid."; }
-    if(choice==='B'){r.innerHTML="B (Best): Clear and detailed compliance demonstration explicitly provided—excellent!"; }
-    if(choice==='C'){r.innerHTML="C (Good): Playful but unnecessarily vague, be more explicit next time."; }
-    if(choice==='D'){r.innerHTML="D (Better): Humorous but impractical explicitly; aim for clear detailed answers."; }
-}
-
-function scenario2Question2B(choice){
-    let r = document.getElementById('response-2-2B');
-    if(choice==='A'){r.innerHTML="A (Good): Nice appeal, missed explicit client priorities."; }
-    if(choice==='B'){r.innerHTML="B (Best): Strong explicit discovery approach—solid choice!"; }
-    if(choice==='C'){r.innerHTML="C (Better): Confident statement, but explicitly reinforcing points detail needed."; }
-    if(choice==='D'){r.innerHTML="D (Wrong): Too dismissive explicitly—be careful here."; }
-}
-
-function scenario2Question2C(choice){
-    let r = document.getElementById('response-2-2C');
-    if(choice==='A'){r.innerHTML="A (Wrong): Too dismissive explicitly; ensure reliability explicitly demonstrated."; }
-    if(choice==='B'){r.innerHTML="B (Best): Great explicit inquiry for client metrics—perfect!"; }
-    if(choice==='C'){r.innerHTML="C (Good): Assumption informal; be explicitly detailed next time."; }
-    if(choice==='D'){r.innerHTML="D (Better): Creative but impractical—consider explicit details instead."; }
-}
-
-function scenario2Question2D(choice){
-    let r = document.getElementById('response-2-2D');
-    if(choice==='A'){r.innerHTML="A (Wrong): Unprofessional explicitly, damaging trust."; }
-    if(choice==='B'){r.innerHTML="B (Best): Clear reset and explicit acknowledgment—excellent."; }
-    if(choice==='C'){r.innerHTML="C (Wrong): Again, clear disregard hurts credibility explicitly."; }
-    if(choice==='D'){r.innerHTML="D (Better): Apology clearly helps, though more explicit detail helps even more."; }
-}
-    </script>
-<!-- SCENARIO 3 -->
-<h2>Scenario 3: Celebrity Pet Influencer Agency</h2>
-<p>MegaMilk Dairy cautiously evaluates your influencer-cat star, Sir Mittens. They worry about compliance:</p>
-<p><strong>"Can a cat influencer stay compliant with strictly regulated dairy-industry guidelines?"</strong></p>
-
-<button onclick="selectAnswer3('A')">A. Sir Mittens' cuteness overrides minor compliance details.</button><br><br>
-<button onclick="selectAnswer3('B')">B. Could you clearly outline regulations critical to you?</button><br><br>
-<button onclick="selectAnswer3('C')">C. Mittens completed our 'Pet Regulations Training Program.'</button><br><br>
-<button onclick="selectAnswer3('D')">D. Publicly challenge outdated regulations.</button><br><br>
-
-<div id="next-step-3"></div>
-
-<script>
-//Scenario 3—First-Level Response
-function selectAnswer3(choice) {
-    let responseArea = document.getElementById('next-step-3');
-
-    if(choice === 'A'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 3: Question 2D</strong> Client: "Compliance is non-negotiable. How can we trust?"</p>
-        <button onclick="scenario3Question2D('A')">A. Engagement matters more than compliance.</button><br><br>
-        <button onclick="scenario3Question2D('B')">B. You're correct; let's clearly reset and address compliance.</button><br><br>
-        <button onclick="scenario3Question2D('C')">C. Humor misunderstood, compliance discussed afterward.</button><br><br>
-        <button onclick="scenario3Question2D('D')">D. Pets naturally compliant anyway.</button><br><br>
-        <div id="response-3-2D"></div>`;
-    } else if(choice === 'B'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 3: Question 2A</strong> Client: "Why choose expensive cat influencers over cheaper options?"</p>
-        <button onclick="scenario3Question2A('A')">A. Cats clearly outperform others in analytics.</button><br><br>
-        <button onclick="scenario3Question2A('B')">B. Cat charisma clearly superior.</button><br><br>
-        <button onclick="scenario3Question2A('C')">C. We'll lower our fees.</button><br><br>
-        <button onclick="scenario3Question2A('D')">D. Slow and steady animals better.</button><br><br>
-        <div id="response-3-2A"></div>`;
-    } else if(choice === 'C'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 3: Question 2B</strong> Client: "How specifically do you proactively verify compliance?"</p>
-        <button onclick="scenario3Question2B('A')">A. Compliance mostly works naturally.</button><br><br>
-        <button onclick="scenario3Question2B('B')">B. Clarify compliance standards explicitly required.</button><br><br>
-        <button onclick="scenario3Question2B('C')">C. Standard checklists clear enough.</button><br><br>
-        <button onclick="scenario3Question2B('D')">D. Pets undergo rigorous compliance training.</button><br><br>
-        <div id="response-3-2B"></div>`;
-    } else if(choice === 'D'){
-        responseArea.innerHTML = `
-        <p><strong>Scenario 3: Question 2C</strong> Client: "Publicly challenging regulations risky?"</p>
-        <button onclick="scenario3Question2C('A')">A. Changing criteria is easy—customers love pets.</button><br><br>
-        <button onclick="scenario3Question2C('B')">B. Identify explicitly what's causing hesitation.</button><br><br>
-        <button onclick="scenario3Question2C('C')">C. Successfully challenged regulations previously.</button><br><br>
-        <button onclick="scenario3Question2C('D')">D. Let's openly challenge limiting regulations.</button><br><br>
-        <div id="response-3-2C"></div>`;
-    }
-}
-
-//Detailed Response Evaluations for Scenario 3:
-
-function scenario3Question2A(choice){
-    let r = document.getElementById('response-3-2A');
-    if(choice==='A'){r.innerHTML="A (Best): Explicit and data-driven differentiation clearly addressed—excellent."; }
-    if(choice==='B'){r.innerHTML="B (Better): Charisma addressed explicitly; stronger analytics detail would help."; }
-    if(choice==='C'){r.innerHTML="C (Wrong): Undercuts value explicitly; damages credibility."; }
-    if(choice==='D'){r.innerHTML="D (Good): Interesting, but explicitly off-point."; }
-}
-
-function scenario3Question2B(choice){
-    let r = document.getElementById('response-3-2B');
-    if(choice==='A'){r.innerHTML="A (Wrong): Too informal explicitly; strong verification is critical."; }
-    if(choice==='B'){r.innerHTML="B (Best): Clear discovery explicitly about client's detailed standards."; }
-    if(choice==='C'){r.innerHTML="C (Good): Basic, limited clarity—needs explicit detail next time."; }
-    if(choice==='D'){r.innerHTML="D (Better): Good reassurance explicitly, though validation specifics would help."; }
-}
-
-function scenario3Question2C(choice){
-    let r = document.getElementById('response-3-2C');
-    if(choice==='A'){r.innerHTML="A (Wrong): Oversimplified risks explicitly underplayed—address seriously."; }
-    if(choice==='B'){r.innerHTML="B (Best): Explicitly good discovery on hesitation—strong approach."; }
-    if(choice==='C'){r.innerHTML="C (Better): Past success mentioned explicitly, further details beneficial."; }
-    if(choice==='D'){r.innerHTML="D (Good): Bold explicitly but needs careful context."; }
-}
-
-function scenario3Question2D(choice){
-    let r = document.getElementById('response-3-2D');
-    if(choice==='A'){r.innerHTML="A (Wrong): Compliance vital explicitly—this approach risky."; }
-    if(choice==='B'){r.innerHTML="B (Best): Excellent reset explicitly—addressing integrity clearly and directly."; }
-    if(choice==='C'){r.innerHTML="C (Better): Good clarification, still explicit detail needed."; }
-    if(choice==='D'){r.innerHTML="D (Good): Informal reassurance explicitly, clearer details next time."; }
-}
+    <div id="next-step-3"></div>
 
     <!-- SCENARIO 4 -->
-<h2>Scenario 4: Sherlock For Hire</h2>
-<p>A formal company worries your detective style is too flashy. They express concern explicitly:</p>
-<p><strong>"We're an established company—we need someone methodical. How does your investigative approach fit our structured culture?"</strong></p>
+    <h2>Scenario 4: Sherlock For Hire</h2>
+    <p>Client concerned detective agency too flashy for structured culture:</p>
+    <button onclick="selectAnswer4('A')">A. Flashiness is better.</button><br><br>
+    <button onclick="selectAnswer4('B')">B. Request details about their processes.</button><br><br>
+    <button onclick="selectAnswer4('C')">C. Describe the AI-generated checklist.</button><br><br>
+    <button onclick="selectAnswer4('D')">D. Mention noise-canceling trench coats.</button><br><br>
 
-<button onclick="selectAnswer4('A')">A. Flashy is better anyway!</button><br><br>
-<button onclick="selectAnswer4('B')">B. Could you clarify rules and processes essential to you?</button><br><br>
-<button onclick="selectAnswer4('C')">C. We use an AI-generated structured checklist.</button><br><br>
-<button onclick="selectAnswer4('D')">D. Noise-canceling trench coats perfect for formal environments.</button><br><br>
-
-<div id="next-step-4"></div>
+    <div id="next-step-4"></div>
 
 <script>
-//Scenario 4 First-Level Response
+// SCENARIO 1 LOGIC
+function selectAnswer1(choice) {
+    let r = document.getElementById('next-step-1');
+    if(choice==='A'){r.innerHTML='A (Good Answer): Interesting—pivot to nostalgia appeal explicitly next.';}
+    else if(choice==='B'){r.innerHTML='B (Best Answer): Great explicit discovery approach!';}
+    else if(choice==='C'){r.innerHTML='C (Better Answer): Creative marketing angle, explicitly reconsider alien priorities.';}
+    else if(choice==='D'){r.innerHTML='D (Wrong Answer): Dishonesty problematic; explicitly address integrity immediately.';}
+}
+
+// SCENARIO 2 LOGIC
+function selectAnswer2(choice) {
+    let r = document.getElementById('next-step-2');
+    if(choice==='A'){r.innerHTML='A (Good Answer): Intriguing—clearly discuss drone feasibility explicitly next.';}
+    else if(choice==='B'){r.innerHTML='B (Better Answer): Good point explicitly about client convenience.';}
+    else if(choice==='C'){r.innerHTML='C (Best Answer): Detailed logistics highlight explicit client needs perfect.';}
+    else if(choice==='D'){r.innerHTML='D (Wrong Answer): Explicitly undervalues client concerns—be cautious.';}
+}
+
+// SCENARIO 3 LOGIC
+function selectAnswer3(choice) {
+    let r = document.getElementById('next-step-3');
+    if(choice==='A'){r.innerHTML='A (Wrong Answer): Explicitly underestimating compliance risks.';}
+    else if(choice==='B'){r.innerHTML='B (Best Answer): Excellent explicit client-focused discovery.';}
+    else if(choice==='C'){r.innerHTML='C (Better Answer): clearly reassuring, but detail verification explicitly next.';}
+    else if(choice==='D'){r.innerHTML='D (Good Answer): Clearly ambitious but explicitly risky; consider carefully.';}
+}
+
+// SCENARIO 4 LOGIC
 function selectAnswer4(choice) {
-   let responseArea = document.getElementById('next-step-4');
-
-   if(choice === 'A'){
-      responseArea.innerHTML = `
-      <p><strong>Scenario 4: Question 2D</strong> Client concerned about professionalism:</p>
-      <button onclick="scenario4Question2D('A')">A. Results matter more than professionalism.</button><br><br>
-      <button onclick="scenario4Question2D('B')">B. You're right, let's explicitly clarify your expectations.</button><br><br>
-      <button onclick="scenario4Question2D('C')">C. Flexibility overrules structure.</button><br><br>
-      <button onclick="scenario4Question2D('D')">D. Apologies, we value structure.</button><br><br>
-      <div id="response-4-2D"></div>`;
-   } else if(choice === 'B'){
-      responseArea.innerHTML = `
-      <p><strong>Scenario 4: Question 2A</strong> Client requests explicit documentation methods:</p>
-      <button onclick="scenario4Question2A('A')">A. Trust implicitly; no documentation.</button><br><br>
-      <button onclick="scenario4Question2A('B')">B. Documentation slows us.</button><br><br>
-      <button onclick="scenario4Question2A('C')">C. Occasional checklists.</button><br><br>
-      <button onclick="scenario4Question2A('D')">D. Comprehensive case files for all investigations.</button><br><br>
-      <div id="response-4-2A"></div>`;
-   } else if(choice === 'C'){
-      responseArea.innerHTML = `
-      <p><strong>Scenario 4: Question 2C</strong> Client asks how checklist explicitly outperforms others:</p>
-      <button onclick="scenario4Question2C('A')">A. Ours creative and flexible; competitors aren't.</button><br><br>
-      <button onclick="scenario4Question2C('B')">B. Clarify explicitly critical outcomes you value most.</button><br><br>
-      <button onclick="scenario4Question2C('C')">C. Checklists just usually work.</button><br><br>
-      <button onclick="scenario4Question2C('D')">D. Simple checklists explicit enough.</button><br><br>
-      <div id="response-4-2C"></div>`;
-   } else if(choice === 'D'){
-      responseArea.innerHTML = `
-      <p><strong>Scenario 4: Question 2B</strong> Client asks if novelty tools explicitly solve challenges:</p>
-      <button onclick="scenario4Question2B('A')">A. Tools mainly for fun.</button><br><br>
-      <button onclick="scenario4Question2B('B')">B. Clarify explicitly investigative challenges.</button><br><br>
-      <button onclick="scenario4Question2B('C')">C. Assume they'll be effective.</button><br><br>
-      <button onclick="scenario4Question2B('D')">D. Gadgets ensure stealth; nothing unsolved explicitly.</button><br><br>
-      <div id="response-4-2B"></div>`;
-   }
-}
-
-//Explicit detailed feedback messages for Scenario 4 follow-up questions:
-
-function scenario4Question2A(choice){
-   let r = document.getElementById('response-4-2A');
-   if(choice==='A'){r.innerHTML="A (Wrong): Documentation explicitly important; addressing explicitly essential for client trust.";}
-   if(choice==='B'){r.innerHTML="B (Good): Quick, but explicitly insufficient; structured documentation crucial.";}
-   if(choice==='C'){r.innerHTML="C (Better): good start, explicitly clarify further in future.";}
-   if(choice==='D'){r.innerHTML="D (Best): explicitly outlined full detailed documentation—excellent!";}
-}
-
-function scenario4Question2B(choice){
-   let r = document.getElementById('response-4-2B');
-   if(choice==='A'){r.innerHTML="A (Wrong): Too trivial explicitly; serious explicit communication crucial.";}
-   if(choice==='B'){r.innerHTML="B (Best): Excellent explicit inquiry; clarifies explicitly client challenges.";}
-   if(choice==='C'){r.innerHTML="C (Good): Vague—explicitly clarify further next time.";}
-   if(choice==='D'){r.innerHTML="D (Better): confidently stated; explicit follow-up detail would be beneficial.";}
-}
-
-function scenario4Question2C(choice){
-   let r = document.getElementById('response-4-2C');
-   if(choice==='A'){r.innerHTML="A (Better): Creativity highlighted explicitly; add specifics next time.";}
-   if(choice==='B'){r.innerHTML="B (Best): explicit discovery clearly reveals client values—perfect!";}
-   if(choice==='C'){r.innerHTML="C (Wrong): casual dismissal explicitly insufficient answer.";}
-   if(choice==='D'){r.innerHTML="D (Good): explicitly simplified approach but may lack detail explicitly required.";}
-}
-
-function scenario4Question2D(choice){
-   let r = document.getElementById('response-4-2D');
-   if(choice==='A'){r.innerHTML="A (Wrong): Professionalism explicitly crucial; cannot dismiss.";}
-   if(choice==='B'){r.innerHTML="B (Best): Excellent explicit reset, clearly building trust explicitly.";}
-   if(choice==='C'){r.innerHTML="C (Good): Flexibility correct, yet overly informal explicitly.";}
-   if(choice==='D'){r.innerHTML="D (Better): Clear explicit professional apology; could be stronger with more explicitness.";}
+    let r = document.getElementById('next-step-4');
+    if(choice==='A'){r.innerHTML='A (Wrong Answer): Explicit disregard for structure problematic.';}
+    else if(choice==='B'){r.innerHTML='B (Best Answer): Clear explicit discovery on procedural preferences.';}
+    else if(choice==='C'){r.innerHTML='C (Better Answer): Clearly structured method, explicitly address specifics next.';}
+    else if(choice==='D'){r.innerHTML='D (Good Answer): Innovative but details explicitly required to further clarify.';}
 }
 </script>
-
-</script>
-
-<!-- ADD Scenario 2, 3, and 4 STRUCTURED Explicitly BELOW, clearly following scenario 1 example. 
-     IMPORTANT: Carefully use new, unique IDs (next-step-2/3/4, response-2-2A, etc.) -->
-
-<!--As you've already designed these scenarios with feedback given clearly earlier, simply paste those existing ones here explicitly now.-->
 
 </body>
 </html>
