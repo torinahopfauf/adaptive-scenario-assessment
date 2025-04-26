@@ -67,19 +67,36 @@ function selectAnswer(choice) {
     }
 }
 
-// Scenario 1 - Question 2 follow-up answer evaluations (Example clearly shown for 2A)
+// Scenario 1 - Question 2A explicit detailed feedback
 function scenario1Question2A(choice){
    let responseArea = document.getElementById('response-1-2A');
-   if(choice === 'A'){ responseArea.innerHTML="You chose A (Wrong). Dismissive answer."; }
-   if(choice === 'B'){ responseArea.innerHTML="You chose B (Best). Great demonstration!"; }
-   if(choice === 'C'){ responseArea.innerHTML="You chose C (Better). Creative but safety concerns unresolved."; }
-   if(choice === 'D'){ responseArea.innerHTML="You chose D (Good). Visually appealing but limited differentiation."; }
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<strong>A (Wrong)</strong>: This response was dismissive and didn't explicitly address the aliens' interest in visual appeal or interactivity. Clearly focus on client interests and explicit differentiation next time.";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<strong>B (Best)</strong>: Excellent work explicitly demonstrating a strong understanding of the aliens' needs and clearly positioning Earth's unique interactive dining experiences!";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<strong>C (Better)</strong>: Creative approach, though explicit acknowledgment of practical safety is crucial. Ensure explicit clarity regarding practical considerations explicitly next time.";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<strong>D (Good)</strong>: Fun idea explicitly highlighted visual appeal but lacked substantial differentiation. Explicitly emphasize stronger unique advantages explicitly next time.";
+   }
+}
 }
 
-// You must explicitly add similar JavaScript functions scenario1Question2B, scenario1Question2C, scenario1Question2D here as well:
+// Scenario 1 - Question 2B explicit detailed feedback
 function scenario1Question2B(choice){
-   let responseArea=document.getElementById('response-1-2B');
-   // Add proper feedback messages explicitly here as above example
+   let responseArea = document.getElementById('response-1-2B');
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<strong>A (Wrong)</strong>: This was explicitly dismissive concerning the alien client's compliance concerns. Next time, explicitly demonstrate more seriousness and knowledge about compliance regulations.";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<strong>B (Best)</strong>: Great demonstration of explicit curiosity and explicit understanding of the client's specific compliance standards! Very effective discovery.";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<strong>C (Good)</strong>: Creative suggestion, though overly impractical. Next time, explicitly choose effective, clearly practical solutions reflecting realistic client contexts.";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<strong>D (Better)</strong>: Provided explicit reassurance, yet lacked clear measurable compliance details. Next time, explicitly include specific examples or measurable demonstrations.";
+   }
+}
 }
 
 function scenario1Question2C(choice){
