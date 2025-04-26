@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenario 1: Alien Cuisine Negotiation</title>
-</head>
-<body>
-<h2>Scenario 1: Alien Cuisine Negotiation</h2>
-
-<p>Aliens arrive on Earth tentatively signaling interest—they're considering investing in Earth's global culture, but they're also secretly evaluating other planetary civilizations. You've set up your first meeting to better understand their cultural requirements and position Earth's uniqueness. During your initial discovery conversation, your alien contact says:</p>
-
-<blockquote><strong>"Earth cuisine seems underwhelming. Some planets offer edible crystals and glowing beverages. What culinary advantage could Earth possibly have?" What is your response?</strong></blockquote> 
-
-<!-- Initial answer buttons -->
-<button onclick="selectAnswer('A')">A: "Our food might seem ordinary, but we have chicken nuggets shaped like dinosaurs. Nobody else thought about merging poultry and paleontology—that makes us better."</button><br><br>
-<button onclick="selectAnswer('B')">B: "Can you tell me more about what culinary experiences impressed you on other planets, and what your group seeks most in galactic cuisine?"</button><br><br>
-<button onclick="selectAnswer('C')">C: "You're worried about food? Our themed cookware merchandise lines and cooking shows surpass any edible crystals or glowing beverages you've seen."</button><br><br>
-<button onclick="selectAnswer('D')">D: "You're very wrong there, alien friends! We exclusively eat glowing lunar moss sandwiches and edible diamond soups."</button><br><br>
-
-<!-- Adaptive content displays here -->
-<div id="adaptiveContent"></div>
-
-<br>
-<a href="../index.html">Return Home</a>
-
 <script>
 function selectAnswer(choice) {
     let contentDiv = document.getElementById('adaptiveContent');
@@ -64,10 +38,7 @@ function selectAnswer(choice) {
 
 function secondLevel(choice) {
     let contentDiv = document.getElementById('adaptiveContent');
-    contentDiv.innerHTML += `<br><em>Your choice has been recorded. (Adaptive scoring logic will be added clearly in the next steps.) Please proceed to the next scenario or return home.</em>`;
-    contentDiv.innerHTML += `<br><br><a href="../index.html">Return to Homepage</a>`;
+    contentDiv.innerHTML += `<br><p>Your response has been recorded! Let's proceed directly to Scenario 2.</p>`;
+    contentDiv.innerHTML += `<br><button onclick="location.href='scenario2.html'">Proceed to Scenario 2</button>`;
 }
 </script>
-
-</body>
-</html>
