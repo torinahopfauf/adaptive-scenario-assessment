@@ -1,89 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenario 1 Complete - Alien Cuisine Negotiation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenario 1: Alien Cuisine Negotiation</title>
 </head>
 <body>
+<div id="scenarioContent">
 
-<div id="mainContent">
+<h2>Scenario 1: Alien Cuisine Negotiation</h2>
+<p>Aliens arrive signaling investment interest but are skeptical:</p>
+<blockquote>"Earth cuisine seems underwhelming compared to other planets' glowing food and edible crystals. What culinary advantage could Earth possibly have?"</blockquote>
 
-    <h2>Scenario 1: Alien Cuisine Negotiation</h2>
-    <p>Aliens arrive tentatively signaling Earth investment interest but are skeptical about culinary offerings: "Earth cuisine seems underwhelming. Some planets offer edible crystals and glowing beverages. What culinary advantage could Earth possibly have?"</p>
-
-    <button onclick="level1('A')">A: Dinosaur-shaped chicken nuggets uniquely merging culinary and cultural history.</button><br><br>
-    <button onclick="level1('B')">B: Clarify specifically what the aliens value most in their culinary experiences.</button><br><br>
-    <button onclick="level1('C')">C: Earth's merchandise and cooking shows surpass competitor planets.</button><br><br>
-    <button onclick="level1('D')">D: Analytics tools that precisely measure dining satisfaction and preference.</button><br><br>
+<button onclick="level1('A', false)">"We have dinosaur-shaped chicken nuggets nobody else thought about merging poultry and paleontology."</button><br><br>
+<button onclick="level1('B', true)">"Could you clarify what culinary experiences impressed you on other planets?"</button><br><br>
+<button onclick="level1('C', false)">"Our themed cookware merchandise surpasses anything you've seen."</button><br><br>
+<button onclick="level1('D', true)">"We have analytic tools clearly measuring dining experiences."</button><br><br>
 
 </div>
 
 <script>
-let contentDiv = document.getElementById('mainContent');
+let content=document.getElementById('scenarioContent');
+let goodAnswers=0;
 
-function level1(choice){
-    if (choice=='A'){
-        contentDiv.innerHTML=`
-        <p><b>Aliens:</b> "Planet Xylo has glowing crystal nuggets. Can your dinosaur nuggets compete?"</p>
-        <button onclick="level2('A')">A: Confess Xylo's technology sounds superior.</button><br><br>
-        <button onclick="level2('B')">B: Ask specifically what aliens like about Xylo's nuggets.</button><br><br>
-        <button onclick="level2('C')">C: Emphasize nostalgia uniquely differentiating dinosaur nuggets.</button><br><br>
-        <button onclick="level2('D')">D: Highlight immersive dinosaur-themed dining experiences.</button><br><br>`;
-    } else if(choice=='B'){
-        contentDiv.innerHTML=`
-        <p><b>Aliens:</b> "We value culinary interactivity & visuals. Does Earth excel here?"</p>
-        <button onclick="level2('A')">A: Demonstrate interactive experiences with business results backing.</button><br><br>
-        <button onclick="level2('B')">B: Further clarify aliens' definition of interactive visuals.</button><br><br>
-        <button onclick="level2('C')">C: Provide data comparing Earth's offerings clearly vs competitors.</button><br><br>
-        <button onclick="level2('D')">D: Present analytic tools enhancing culinary visual interactivity.</button><br><br>`;
-    } else if(choice=='C'){
-        contentDiv.innerHTML=`
-        <p><b>Aliens:</b> "Interesting cookware. Why is it superior to other galactic merchandise?"</p>
-        <button onclick="level2('A')">A: Share comparative analytics data clearly showing product preference.</button><br><br>
-        <button onclick="level2('B')">B: Offer live interactive demo comparing Earth & alien merchandise.</button><br><br>
-        <button onclick="level2('C')">C: Ask aliens clearly which competitor products interest them most.</button><br><br>
-        <button onclick="level2('D')">D: Highlight tools providing clear analytics supporting superior use.</button><br><br>`;
-    } else{
-        contentDiv.innerHTML=`
-        <p><b>Aliens:</b> "We saw no glowing Earth food—can you clarify this discrepancy?"</p>
-        <button onclick="level2('A')">A: Admit exaggeration and suggest resetting discussion clearly.</button><br><br>
-        <button onclick="level2('B')">B: Humor acknowledged; now clarify aliens' true culinary needs.</button><br><br>
-        <button onclick="level2('C')">C: Demonstrate actual innovative dining examples.</button><br><br>
-        <button onclick="level2('D')">D: Clearly restart to ensure alignment with expectations.</button><br><br>`;
-    }
-}
+function level1(choice,good){if(good){goodAnswers++;}
+content.innerHTML=`<p>Aliens: "How interactive and visually appealing is Earth's culinary experience compared to other planets?"</p>
+<button onclick="level2(true)">Provide interactive dining examples backed by proven metrics.</button><br><br>
+<button onclick="level2(true)">Ask clearly for aliens' definition of ideal interaction.</button><br><br>
+<button onclick="level2(false)">Assume Earth's experiences must be superior without clear evidence.</button><br><br>
+<button onclick="level2(false)">Confess Earth likely falls short of alien expectations.</button><br><br>`;}
 
-function level2(choice){
-    contentDiv.innerHTML+=`
-    <p>Your response has been noted. Aliens now ask how Earth's culinary innovations are validated client satisfaction-wise. How to respond?</p>
-    <button onclick="level3('A')">A: Share case-studies precisely detailing business impacts of these culinary experiences.</button><br><br>
-    <button onclick="level3('B')">B: Propose showing analytics tools validating customer preference.</button><br><br>
-    <button onclick="level3('C')">C: Ask aliens exactly what validation standards they value most.</button><br><br>
-    <button onclick="level3('D')">D: Provide comparative validation scenarios against galactic competitors.</button><br><br>`;
-}
+function level2(good){if(good){goodAnswers++;}
+content.innerHTML+=`<p>Aliens: "What validation clearly shows your culinary methods effectively satisfy clients?"</p>
+<button onclick="level3(true)">Show detailed culinary experience analytics clearly proving value.</button><br><br>
+<button onclick="level3(true)">Present comprehensive customer satisfaction case studies.</button><br><br>
+<button onclick="level3(false)">Admit Earth lacks clear validation methods yet.</button><br><br>
+<button onclick="level3(false)">Suggest validation is unnecessary, clearly stating Earth's superiority directly.</button><br><br>`;}
 
-function level3(choice){
-    contentDiv.innerHTML+=`
-    <p>Aliens now request to see these culinary innovations practically. What's your clear next step?</p>
-    <button onclick="level4('A')">A: Suggest interactive demonstration session right away.</button><br><br>
-    <button onclick="level4('B')">B: Offer video examples clearly demonstrating culinary concepts.</button><br><br>
-    <button onclick="level4('C')">C: Recommend scheduled structured demo tailored exactly to alien preferences.</button><br><br>
-    <button onclick="level4('D')">D: Ask first to see competitor demos to clearly exceed expectations.</button><br><br>`;
-}
+function level3(good){if(good){goodAnswers++;}
+content.innerHTML+=`<p>Aliens ask next to "clearly experience Earth's innovation firsthand."</p>
+<button onclick="level4(true)">Provide structured tailored interactive demo immediately for aliens.</button><br><br>
+<button onclick="level4(true)">Clearly arrange scheduled demonstration meeting aligned carefully.</button><br><br>
+<button onclick="level4(false)">Propose aliens independently contact Earth's restaurants directly.</button><br><br>
+<button onclick="level4(false)">Suggest aliens adjust expectations downward due to unclear readiness.</button><br><br>`;}
 
-function level4(choice){
-    contentDiv.innerHTML+=`
-    <p>Aliens feel positive and ready to proceed further. They explicitly request structured next steps. What's your careful final answer to secure commitment?</p>
-    <button onclick="finalStep()">Provide a structured action plan clearly outlining next culinary demonstration steps.</button><br><br>`;
-}
+function level4(good){if(good){goodAnswers++;}
+if(goodAnswers>=3){
+content.innerHTML+=`<p>Aliens pleased with your interaction and clarity: "We appreciate your structured approach. What's the clear next step?"</p>
+<button onclick="finalGood()">Provide clear structured action plan outlining next steps.</button><br><br>
+<button onclick="finalGood()">Deliver detailed partnership plan explicitly meeting alien criteria.</button><br><br>`;}
+else{
+content.innerHTML+=`<p>Aliens cautious due to unclear earlier answers: "We've reservations. Can you clearly clarify how Earth's culinary proposals meet our criteria?"</p>
+<button onclick="finalCautious()">Offer clearly structured follow-up meeting to properly address reservations.</button><br><br>
+<button onclick="finalCautious()">Admit previous unclear answers and clearly propose resetting discussion carefully now.</button><br><br>`;}}
 
-function finalStep(){
-    contentDiv.innerHTML=`
-    <p><strong>Aliens pleased:</strong> "Your structured approach resonates clearly. We're comfortable proceeding forward."</p>
-    <br><button onclick="location.href='scenario2.html'">Proceed to Scenario 2</button>`;
-}
+function finalGood(){
+content.innerHTML=`<p><strong>Aliens respond positively:</strong> "Your professional, structured approach matches exactly what we're looking for. Happy to proceed further."</p><button onclick="location.href='scenario2.html'">Proceed Clearly to Scenario 2</button>`;}
+
+function finalCautious(){
+content.innerHTML=`<p><strong>Aliens remain cautious:</strong> "We appreciate the honesty, but clearly require further consideration before proceeding."</p><button onclick="location.href='scenario2.html'">Proceed Carefully to Scenario 2 for Another Chance</button>`;}
 </script>
-
 </body>
 </html>
