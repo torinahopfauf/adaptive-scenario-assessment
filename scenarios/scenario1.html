@@ -7,90 +7,80 @@
 </head>
 <body>
 <div id="scenario" style="font-family:Arial,sans-serif;max-width:700px;margin:auto;padding:20px;line-height:1.5;">
-  <h2>Scenario 1: Alien Cuisine Negotiation</h2>
-  <p>An alien delegation expresses cautious interest in investing in Earth's culinary scene, yet notes skepticism:</p>
-  <blockquote>"We've encountered impressive culinary options elsewhere—edible crystal meals, luminous drinks. Earth's culinary offerings seem, by comparison, rather ordinary. What unique culinary advantage does Earth actually offer?"</blockquote>
+<h2>Scenario 1: Alien Cuisine Negotiation</h2>
+<p>An alien delegation arrives, considering an investment in Earth's culinary landscape but expressing initial skepticism:</p>
+<blockquote>"We've encountered impressive culinary options on other planets—edible crystals, glowing beverages. Comparatively, Earth's cuisine seems somewhat ordinary. Can you clarify Earth's unique culinary advantage?"</blockquote>
 
-  <button onclick="q1('A')">"We feature dinosaur-shaped chicken nuggets blending Earth's history and unique culinary creativity."</button><br><br>
-  <button onclick="q1('B')">"Can you tell us specifically about culinary experiences you've enjoyed elsewhere, and clarify exactly what you're seeking now?"</button><br><br>
-  <button onclick="q1('C')">"Our culinary-themed cookware and dining shows explicitly outperform similar galactic offerings."</button><br><br>
-  <button onclick="q1('D')">"We offer analytics tools that precisely measure dining satisfaction, validating our culinary methods clearly."</button><br><br>
+<button onclick="q1('A')">"Our chicken nuggets shaped like dinosaurs uniquely merge Earth's history and culinary creativity."</button><br><br>
+<button onclick="q1('B')">"Could you describe culinary experiences you've appreciated previously, clarifying what you seek now?"</button><br><br>
+<button onclick="q1('C')">"Earth's cookware merchandise and entertainment clearly outperform galactic competitors."</button><br><br>
+<button onclick="q1('D')">"Advanced analytics tools precisely measure dining satisfaction, validating our culinary methods."</button><br><br>
 </div>
 
 <script>
 let scenario=document.getElementById('scenario');
 let competencies={Discovery:0,Competitive:0,Demoing:0,Tools:0,Business:0,Engagement:0};
 
-// Question 1 Answer Routing
 function q1(choice){
-  if(choice==='A'){competencies.Competitive++;q2A();}
-  if(choice==='B'){competencies.Discovery++;q2B();}
-  if(choice==='C'){competencies.Demoing++;competencies.Competitive++;q2C();}
-  if(choice==='D'){competencies.Tools++;competencies.Business++;q2D();}
+choice==='A'?competencies.Competitive++:null;
+choice==='B'?competencies.Discovery++:null;
+choice==='C'?competencies.Demoing++,competencies.Competitive++:null;
+choice==='D'?competencies.Tools++,competencies.Business++:null;
+q2();
 }
 
-//Question 2 branches (distinct & fully adaptive)
-function q2A(){ //Competitive path
-scenario.innerHTML=`<p>"Planet Xylo offers highly popular crystal nuggets. How exactly would your dinosaur nuggets specifically compete directly?"</p>
-  <button onclick="competencies.Business--;q3A()">Admit Earth's nuggets aren't currently competitive, propose future differentiation.</button><br><br>
-  <button onclick="competencies.Competitive++;q3A()">Explain your distinct cultural nostalgia appeal that Xylo lacks.</button>`;}
+function q2(){
+scenario.innerHTML=`<p>"Some planets highlight culinary visuals and interactivity. How well can Earth's culinary offerings deliver these experiences?"</p>
+<button onclick="competencies.Demoing++;competencies.Business++;q3()">Provide clear examples of interactive Earth culinary experiences with supporting data.</button><br><br>
+<button onclick="competencies.Discovery++;q3()">Ask more clearly what 'visual interactivity' specifically means to the aliens.</button><br><br>
+<button onclick="competencies.Competitive++;competencies.Tools++;q3()">Offer analytics clearly comparing Earth to competitors' interactivity.</button><br><br>
+<button onclick="competencies.Demoing--;q3()">Acknowledge Earth's current culinary interactivity limitations.</button><br><br>`;
+}
 
-function q2B(){ //Discovery path
-scenario.innerHTML=`<p>"We prefer culinary offerings that provide true interactivity and visual engagement. Can you clearly match our expectations?"</p>
-  <button onclick="competencies.Demoing++;competencies.Discovery++;q3B()">Provide specific interactive dining examples backed by satisfaction data.</button><br><br>
-  <button onclick="competencies.Competitive--;q3B()">Claim without details Earth's culinary interactivity exceeds competitor offerings.</button>`;}
+function q3(){
+scenario.innerHTML=`<p>"Could you clearly explain how Earth validates ongoing culinary innovation performance?"</p>
+<button onclick="competencies.Tools++;competencies.Business++;q4()">Clearly explain thorough validation processes, supported by analytic tools & client data.</button><br><br>
+<button onclick="competencies.Discovery++;q4()">Request specifics of validation criteria important to aliens.</button><br><br>
+<button onclick="competencies.Tools--;q4()">Admit current culinary innovation validation approaches at Earth are still limited.</button><br><br>`;
+}
 
-function q2C(){ //Demo path
-scenario.innerHTML=`<p>"What explicit evidence or examples demonstrate measurable superiority of Earth's culinary merchandise and entertainment?"</p>
-  <button onclick="competencies.Tools++;q3C()">Clearly present analytics evidence of superior product popularity.</button><br><br>
-  <button onclick="competencies.Demoing++;q3C()">Offer a clear, immediate live demonstration comparing your products to competitors'.</button>`;}
-
-function q2D(){ //Analytics path
-scenario.innerHTML=`<p>"Can you clearly demonstrate specifically how your analytics validate and improve customer culinary experiences?"</p>
-  <button onclick="competencies.Tools++;competencies.Demoing++;q3D()">Immediately demo how analytics validate customer satisfaction explicitly.</button><br><br>
-  <button onclick="competencies.Tools--;competencies.Engagement--;q3D()">Suggest analytics validation isn't vital for culinary products.</button>`;}
-
-//Question 3 branches
-function q3A(){
-scenario.innerHTML+=`<p>"Precisely how do Earth's novelty offerings sustainably maintain competitive advantage long-term?"</p>
- <button onclick="competencies.Business++;q4()">Outline clear strategic plans and precise competitive positioning methods.</button><br><br>
- <button onclick="competencies.Business--;q4()">Admit uncertainty about sustainable competitive advantages currently.</button>`;}
-
-function q3B(){
-scenario.innerHTML+=`<p>"What exactly is Earth's method to consistently validate culinary innovation success?"</p>
- <button onclick="competencies.Tools++;competencies.Business++;q4()">Clearly explain detailed culinary validation processes and tools.</button><br><br>
- <button onclick="competencies.Tools--;q4()">Admit current Earth methods to validate culinary innovations are underdeveloped.</button>`;}
-
-function q3C(){
-scenario.innerHTML+=`<p>"Could you clarify specifically how you train your teams for effective culinary merchandise demonstrations?"</p>
- <button onclick="competencies.Demoing++;competencies.Tools++;q4()">Clearly detail thorough training programs in sales tools & processes for demonstrations.</button><br><br>
- <button onclick="competencies.Demoing--;q4()">Admit that currently, structured demo training is limited or lacks structure.</button>`;}
-
-function q3D(){
-scenario.innerHTML+=`<p>"Can realistic analytics data consistently predict culinary customer satisfaction?"</p>
- <button onclick="competencies.Tools++;competencies.Business++;q4()">Clearly explain how analytics provide actionable client engagement predictions.</button><br><br>
- <button onclick="competencies.Tools--;competencies.Business--;q4()">Admit analytics data cannot reliably predict customer satisfaction yet.</button>`;}
-
-//Question 4 (Final Adaptive Question - No Competency Feedback yet)
 function q4(){
-scenario.innerHTML+=`<p><em>Aliens thank you warmly for the discussion. "What's the specific recommended next step you'd propose from here?"</em></p>
- <button onclick="competencies.Engagement++;saveScores()">Arrange immediate tailored culinary experience demos matching alien's exact interests.</button><br><br>
- <button onclick="competencies.Discovery++;saveScores()">Suggest scheduling detailed discovery sessions clearly defining specific culinary collaboration.</button><br><br>
- <button onclick="competencies.Business++;saveScores()">Propose preparation of a clearly structured, definitive business proposal with measurable outcomes.</button><br><br>
- <button onclick="competencies.Competitive++;saveScores()">Offer comprehensive competitive analysis clarifying precisely how Earth surpasses culinary competitors.</button>`;}
-
-//Save competencies internally—no immediate feedback displayed, ready for cumulative later
-function saveScores(){
- sessionStorage.setItem('scenario1Scores',JSON.stringify(competencies));
- scenario.innerHTML+=`<p>Your answers have been Saved. Now let's continue to Scenario 2.</p>
- <button onclick="nextScenario()">Continue to Scenario 2</button>`;
+scenario.innerHTML=`<p>"If we were to proceed, how would Earth specifically help assure our investment success?"</p>
+<button onclick="competencies.Business++;competencies.Competitive++;q5()">Prepare explicitly detailed analyses clearly comparing Earth's culinary sector against competitors'.</button><br><br>
+<button onclick="competencies.Demoing++;competencies.Engagement++;q5()">Arrange interactive live demonstrations clearly centered on your stated interests.</button><br><br>
+<button onclick="competencies.Tools++;q5()">Provide direct access to Earth's culinary validation analytics tools to assess value.</button><br><br>
+<button onclick="competencies.Discovery++;competencies.Engagement++;q5()">Schedule detailed discovery sessions clearly focused on your specific investment objectives.</button><br><br>`;
 }
 
-//Proceed to next scenario (Scenario 2 to follow)
+//Final question (everyone gets this)
+function q5(){
+scenario.innerHTML=`<p>Aliens finally ask: "What tangible next step specifically would you most recommend right now, to best move discussions toward partnership?"</p>
+<button onclick="competencies.Business++;finalFeedback()">Clearly outline detailed business strategy session, outcomes, measurable milestones.</button><br><br>
+<button onclick="competencies.Demoing++;finalFeedback()">Arrange immediate, engaging live demo experience specifically showcasing offerings.</button><br><br>
+<button onclick="competencies.Competitive++;finalFeedback()">Provide immediate competitor analysis clearly pinpointing Earth's distinct competitive advantages.</button><br><br>
+<button onclick="competencies.Tools++;finalFeedback()">Organize explicit deep-dive session into culinary analytics tools that evaluate client experiences.</button><br><br>`;
+}
+
+//Humorous scenario-ending feedback, specific to high-scoring competency areas
+function finalFeedback(){
+let highest=Object.keys(competencies).reduce((a,b)=>competencies[a]>competencies[b]?a:b);
+let messages={
+  Discovery:'"The aliens are definitely impressed by your investigative abilities—you’ve quite clearly figured out what they really want!"',
+  Competitive:'"Impressive! You’ve decisively convinced the aliens to disregard your culinary competitors entirely."',
+  Demoing:'"Your demonstration skills and product presentations have the aliens literally asking for seconds."',
+  Tools:'"Your prowess with validation analytics tools has won over the analytically-inclined aliens completely!"',
+  Business:'"The delegation admires your business insight—they already see clear financial returns on their culinary investment."',
+  Engagement:'"Your professionalism and attentiveness has made them feel more welcome than on their home planet!"'
+};
+scenario.innerHTML=`<p><em>${messages[highest]}</em></p><p>Your answers have been recorded for final competency evaluation.</p>
+<button onclick="nextScenario()">Continue to Scenario 2</button>`;
+sessionStorage.setItem('scenario1Scores',JSON.stringify(competencies));
+}
+
+//Proceed clearly to next scenario page
 function nextScenario(){
- location.href='scenario2.html';
+location.href='scenario2.html';
 }
 </script>
-
 </body>
 </html>
