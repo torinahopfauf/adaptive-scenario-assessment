@@ -2,78 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Scenario 1: Alien Cuisine Negotiation</title>
 </head>
 <body>
-<div id="scenario" style="font-family:Arial, sans-serif; line-height:1.6; max-width:700px; margin:auto; padding:20px;">
+<div id="content" style="font-family:Arial,sans-serif;line-height:1.5; max-width:700px;margin:auto;padding:20px;">
     <h2>Scenario 1: Alien Cuisine Negotiation</h2>
-    <p>An alien delegation arrives, indicating potential interest in investing in Earth's culinary culture. However, they express skepticism:</p>
-    <blockquote><em>"We've explored impressive culinary options elsewhere—edible crystal meals, luminous beverages, and more. Frankly, Earth's offerings seem less exciting in comparison. What distinct culinary advantage can Earth provide?"</em></blockquote>
-
-    <button onclick="firstAnswer('A', false)">"We offer chicken nuggets shaped like dinosaurs—a unique combination of cuisine and Earth's paleontological history."</button><br><br>
-    <button onclick="firstAnswer('B', true)">"Could you share what culinary experiences have impressed you previously, and specifically outline what you're seeking now?"</button><br><br>
-    <button onclick="firstAnswer('C', false)">"Our cookware merchandise and food-related entertainment are clearly superior to competitors across the galaxy."</button><br><br>
-    <button onclick="firstAnswer('D', true)">"We utilize advanced analytics to precisely measure dining satisfaction and preferences, clearly demonstrating our strengths."</button><br><br>
+    <p>An alien delegation has arrived, considering investing in Earth's culinary culture. However, they express skepticism clearly:</p>
+    <blockquote>"We've seen remarkable culinary offerings on other planets—edible crystals, luminous beverages. Earth's cuisine seems somewhat ordinary in comparison. What distinct advantage can Earth clearly provide over such competitors?"</blockquote>
+    
+    <button onclick="q1('A')">"We offer chicken nuggets shaped like dinosaurs—a unique fusion of culinary art and Earth's history."</button><br><br>
+    <button onclick="q1('B')">"Could you tell us about culinary experiences you've enjoyed elsewhere, and what specifically you're seeking now?"</button><br><br>
+    <button onclick="q1('C')">"Our culinary-themed products and entertainment options significantly outperform galactic competitors."</button><br><br>
+    <button onclick="q1('D')">"We utilize detailed analytics to demonstrate dining satisfaction and preference."</button><br><br>
 </div>
 
 <script>
-let scenario=document.getElementById('scenario'); let score=0;
+let content=document.getElementById('content');
+let competencies={BusinessAcumen:0,Competitive:0,Discovery:0,Demoing:0,Tools:0,Engagement:0};
 
-function firstAnswer(choice,good){
-    if(good){score++;}
-    scenario.innerHTML=`<p><strong>Aliens clarify more clearly:</strong> "We prioritize culinary experiences that are vividly interactive and visually engaging. How precisely does Earth's cuisine match this expectation?"</p>
-    <button onclick="secondAnswer(true)">Provide concrete examples of Earth's dining experiences that emphasize vivid interactivity, supported by proven customer satisfaction data.</button><br><br>
-    <button onclick="secondAnswer(true)">Request more details about what 'interactive' and 'visually appealing' specifically mean to the aliens, to align precisely with their expectations.</button><br><br>
-    <button onclick="secondAnswer(false)">Assure—without presenting concrete evidence—that Earth's dining interactivity surpasses other known planets.</button><br><br>
-    <button onclick="secondAnswer(false)">Admit cautiously that Earth currently might not yet meet the high visual interactivity standards they have encountered elsewhere.</button><br><br>`;
+function q1(choice){
+if(choice=='A'){competencies.Competitive++;questionA();}
+else if(choice=='B'){competencies.Discovery++;questionB();}
+else if(choice=='C'){competencies.Competitive++;competencies.Demoing++;questionC();}
+else if(choice=='D'){competencies.Tools++;competencies.BusinessAcumen++;questionD();}
 }
 
-function secondAnswer(good){
-    if(good){score++;}
-    scenario.innerHTML=`<p><strong>The aliens ask thoughtfully:</strong> "How does Earth validate its culinary innovations to ensure they indeed meet customer desires effectively?"</p>
-    <button onclick="thirdAnswer(true)">Present detailed, clearly structured case studies demonstrating customer satisfaction and measurable positive outcomes.</button><br><br>
-    <button onclick="thirdAnswer(true)">Offer a live demonstration of the analytics tools used to continuously validate customer satisfaction with our cuisine.</button><br><br>
-    <button onclick="thirdAnswer(false)">Suggest validation isn't vital, believing aliens will trust Earth's culinary reputation without clear evidence.</button><br><br>
-    <button onclick="thirdAnswer(false)">Acknowledge limitations in Earth's current validation process, asking what validation methods aliens prefer.</button><br><br>`;
+function questionA(){
+content.innerHTML=`<p><strong>Aliens reply:</strong> "Planet Xylo has glowing crystal nuggets popular across the galaxy. How exactly would your dinosaur nuggets directly compete?"</p>
+<button onclick="competencies.Competitive--;competencies.BusinessAcumen--;nextStep()">Admit dinosaur nuggets don't directly compete yet.</button><br><br>
+<button onclick="competencies.Competitive++;nextStep()">Point out unique cultural nostalgia aspects unmatched by Xylo's crystals.</button><br><br>
+<button onclick="competencies.Discovery++;nextStep()">Ask aliens to clarify why Xylo nuggets are appealing to them.</button><br><br>
+<button onclick="competencies.Demoing++;nextStep()">Offer a demo of Earth's immersive dinosaur-themed dining experiences.</button><br><br>`;}
+
+function questionB(){
+content.innerHTML=`<p><strong>Aliens clarify:</strong> "We specifically prefer visually engaging and interactive cuisine. How does Earth meet these expectations?"</p>
+<button onclick="competencies.Demoing++;competencies.BusinessAcumen++;nextStep()">Provide tangible examples of Earth's interactive dining experiences with supporting data.</button><br><br>
+<button onclick="competencies.Discovery++;nextStep()">Request further definition of their ideal visual interactivity.</button><br><br>
+<button onclick="competencies.Competitive--;nextStep()">Claim without evidence that Earth's dining interactions surpass competitors.</button><br><br>
+<button onclick="competencies.Demoing--;competencies.BusinessAcumen--;nextStep()">Admit Earth's experiences currently lack the interactivity desired.</button><br><br>`;}
+
+function questionC(){
+content.innerHTML=`<p><strong>Aliens inquire:</strong> "How precisely do Earth's cookware and related offerings measurably surpass other planets' culinary products?"</p>
+<button onclick="competencies.Tools++;nextStep()">Provide analytic evidence demonstrating product popularity.</button><br><br>
+<button onclick="competencies.Demoing++;nextStep()">Suggest a live product demonstration comparing Earth's offerings against competitors.</button><br><br>
+<button onclick="competencies.Discovery++;nextStep()">Clarify which competitors or features aliens are most interested in.</button><br><br>
+<button onclick="competencies.Competitive--;nextStep()">Admit a lack of detailed insights into competitors' specific offerings.</button><br><br>`;}
+
+function questionD(){
+content.innerHTML=`<p><strong>Aliens respond with interest:</strong> "Could you demonstrate how these analytics tools directly support and improve your customer's culinary experiences?"</p>
+<button onclick="competencies.Tools+=1;competencies.BusinessAcumen+=1;nextStep()">Immediately demo analytics tools validating client satisfaction.</button><br><br>
+<button onclick="competencies.Competitive++;nextStep()">Provide examples comparing Earth's analytics to competitors' approaches.</button><br><br>
+<button onclick="competencies.Tools--;nextStep()">Admit analytics currently lack measurement of specific qualities aliens value.</button><br><br>
+<button onclick="competencies.Engagement--;nextStep()">Argue validation analytics are unnecessary for culinary success.</button><br><br>`;}
+
+function nextStep(){
+content.innerHTML+=`<p><strong>Aliens conclude:</strong> "Thank you for the conversation thus far."</p>
+<button onclick="finalFeedback()">View Scenario 1 Competency Feedback</button>`;
 }
 
-function thirdAnswer(good){
-    if(good){score++;}
-    scenario.innerHTML=`<p><strong>Aliens now inquire further:</strong> "Could we experience firsthand Earth's culinary innovations to assess alignment with our preferences?"</p>
-    <button onclick="fourthAnswer(true)">Immediately arrange a carefully tailored, structured interactive dining demonstration precisely aligned with alien expectations.</button><br><br>
-    <button onclick="fourthAnswer(true)">Offer to schedule a clearly coordinated demonstration session designed explicitly around the aliens' interests.</button><br><br>
-    <button onclick="fourthAnswer(false)">Suggest aliens independently contact local restaurants to arrange demonstrations themselves, without your direct management.</button><br><br>
-    <button onclick="fourthAnswer(false)">Encourage the aliens to lower their initial expectations, acknowledging clearly that Earth's demonstrations may require additional preparation.</button><br><br>`;
-}
-
-function fourthAnswer(good){
-    if(good){score++;}
-    if(score>=3){
-        scenario.innerHTML=`<p><strong>The aliens respond positively and professionally:</strong> "We appreciate your structured and clear communication throughout this conversation. Could you now outline precise next steps toward formalizing our potential collaboration?"</p>
-        <button onclick="finalPositive()">Provide a thoroughly detailed, structured action plan explicitly outlining collaborative next steps.</button><br><br>
-        <button onclick="finalPositive()">Present a clear timeline and deliverables carefully matching the aliens' clearly articulated expectations.</button><br><br>`;
-    }else{
-        scenario.innerHTML=`<p><strong>The aliens communicate some hesitation:</strong> "While grateful for the conversation, we have remaining reservations based on your earlier responses. Could you clearly clarify how precisely Earth's offerings align with our stated priorities?"</p>
-        <button onclick="finalNeutral()">Propose a structured follow-up meeting thoughtfully designed to specifically address and clarify lingering concerns.</button><br><br>
-        <button onclick="finalNeutral()">Acknowledge previous shortcomings in clarity, suggesting we reset the conversation with appropriately structured next steps.</button><br><br>`;
-    }
-}
-
-function finalPositive(){
-    scenario.innerHTML=`<p><strong>Aliens, thoroughly satisfied, conclude:</strong> "Your structured, thorough approach clearly matches our expectations. We're eager to proceed further."</p>
-    <button onclick="nextScenario()">Proceed directly to Scenario 2</button>`;
-}
-
-function finalNeutral(){
-    scenario.innerHTML=`<p><strong>Aliens, appreciative but cautious, respond thoughtfully:</strong> "Your thoughtful reconsideration is noted clearly. Further careful reflection will be required before we proceed formally."</p>
-    <button onclick="nextScenario()">Proceed carefully to Scenario 2</button>`;
-}
-
-function nextScenario(){
-    location.href='scenario2.html';
+function finalFeedback(){
+let summary=`<h3>Scenario 1 - Competency Feedback:</h3><ul>`;
+summary+=competencies.Discovery>0?`<li>✅Discovery: Good - You asked and clarified client needs effectively.</li>`:`<li>⚠️Discovery: Improvement needed - Limited information gathered.</li>`;
+summary+=competencies.Competitive>0?`<li>✅Competitive Positioning: Good - Clear differentiation presented effectively versus competitors.</li>`:`<li>⚠️Competitive Positioning: Improvement needed - Competitor differentiation unclear.</li>`;
+summary+=competencies.Demoing>0?`<li>✅Demoing: Good – Demonstrations and tangible examples communicated well.</li>`:`<li>⚠️Demoing: Improvement needed - Clearly demonstrate product capabilities next time.</li>`;
+summary+=competencies.Tools>0?`<li>✅Tools & Analytics: Good - Demonstrated capability with analytics and validation tools effectively.</li>`:`<li>⚠️Tools & Analytics: Improvement needed - Limited conveyance of tool competency or validation skills.</li>`;
+summary+=competencies.BusinessAcumen>0?`<li>✅Business Acumen: Good - You clearly conveyed business value.</li>`:`<li>⚠️Business Acumen: Improvement needed - Better alignment of business value required.</li>`;
+summary+=competencies.Engagement<0?`<li>⚠️Client Engagement: Improvement needed - some responses demonstrated disregard for client perspective.</li>`:`<li>✅Client Engagement: Good - Maintained professional client-oriented dialogue.</li>`;
+summary+=`</ul><br><button onclick="location.href='scenario2.html'">Proceed to Scenario 2</button>`;
+content.innerHTML=summary;
 }
 </script>
-
 </body>
 </html>
