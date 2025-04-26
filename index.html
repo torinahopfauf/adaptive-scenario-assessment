@@ -27,9 +27,31 @@
 <div id="answer-response"></div>
 
 <script>
+<div id="next-step-1"></div>
+
+<script>
 function selectAnswer(choice) {
-    document.getElementById('answer-response').innerHTML = "You selected answer " + choice + ". (We'll add adaptive logic next!)";
+    let responseArea = document.getElementById('next-step-1');
+
+    if(choice === 'A'){
+        responseArea.innerHTML = `
+        <p>You selected A (Good response). Since you chose a creative but partially informed answer, let's move to a question focusing more clearly on Discovery and Competitive Landscape...</p>
+        <p>[Here you'll insert Scenario 1 - Question 2C clearly next]</p>`;
+    } else if(choice === 'B'){
+        responseArea.innerHTML = `
+        <p>You selected B (Best response). Great job. Now let's dive deeper into Business Acumen and Product Knowledge...</p>
+        <p>[Here you'll insert Scenario 1 - Question 2A clearly next]</p>`;
+    } else if(choice === 'C'){
+        responseArea.innerHTML = `
+        <p>You selected C (Better response). Not bad! Let's explicitly retest your discovery skill more clearly.</p>
+        <p>[Here you'll insert Scenario 1 - Question 2B clearly next]</p>`;
+    } else if(choice === 'D'){
+        responseArea.innerHTML = `
+        <p>You selected D (Wrong). Integrity and honesty are critical.</p>
+        <p>[Here you'll insert Scenario 1 - Question 2D clearly next]</p>`;
+    }
 }
+</script>
 </script>
     </div>
 
