@@ -6,84 +6,95 @@
     <title>Adaptive Scenario-Based Assessment</title>
 </head>
 <body>
-    <h1>Adaptive Scenario-Based Assessment Prototype</h1>
+    <h1>Adaptive Scenario-Based Assessment</h1>
 
-    <!-- SCENARIO 1 -->
+    <!-- Scenario 1 -->
     <h2>Scenario 1: Alien Invasion Negotiation</h2>
-    <p>Aliens arrive skeptical about Earth's cuisine:</p>
-    <button onclick="selectAnswer1('A')">A. Dinosaur-shaped chicken nuggets.</button><br><br>
-    <button onclick="selectAnswer1('B')">B. Ask aliens about interests.</button><br><br>
-    <button onclick="selectAnswer1('C')">C. Highlight cookware merchandise.</button><br><br>
-    <button onclick="selectAnswer1('D')">D. Claim we eat glowing sandwiches.</button><br><br>
+    <p>Aliens skeptical about Earth's cuisine. How respond?</p>
+    <button onclick="scenario1('A')">A. Dinosaur-shaped chicken nuggets.</button><br><br>
+    <button onclick="scenario1('B')">B. Ask aliens about their interests.</button><br><br>
+    <button onclick="scenario1('C')">C. Highlight cookware merchandise.</button><br><br>
+    <button onclick="scenario1('D')">D. Claim we eat glowing sandwiches.</button><br><br>
+    <div id="scenario1-next"></div>
 
-    <div id="next-step-1"></div>
-
-    <!-- SCENARIO 2 -->
+    <!-- Scenario 2 -->
     <h2>Scenario 2: The Cheesy Startup</h2>
-    <p>Client hesitating about online cheese freshness:</p>
-    <button onclick="selectAnswer2('A')">A. Highlight drone delivery.</button><br><br>
-    <button onclick="selectAnswer2('B')">B. Clients avoid commute traffic.</button><br><br>
-    <button onclick="selectAnswer2('C')">C. Provide detailed logistics data.</button><br><br>
-    <button onclick="selectAnswer2('D')">D. Freshness is overrated.</button><br><br>
+    <p>Client hesitating about online cheese freshness.</p>
+    <button onclick="scenario2('A')">A. Highlight drone delivery.</button><br><br>
+    <button onclick="scenario2('B')">B. Clients avoid commute traffic.</button><br><br>
+    <button onclick="scenario2('C')">C. Provide detailed logistics data.</button><br><br>
+    <button onclick="scenario2('D')">D. Freshness not a big deal.</button><br><br>
+    <div id="scenario2-next"></div>
 
-    <div id="next-step-2"></div>
-
-    <!-- SCENARIO 3 -->
+    <!-- Scenario 3 -->
     <h2>Scenario 3: Celebrity Pet Influencer Agency</h2>
-    <p>Client concerned about influencer-cat compliance:</p>
-    <button onclick="selectAnswer3('A')">A. Cuteness overrides rules.</button><br><br>
-    <button onclick="selectAnswer3('B')">B. Clarify compliance rules first.</button><br><br>
-    <button onclick="selectAnswer3('C')">C. Completed pet regulations training.</button><br><br>
-    <button onclick="selectAnswer3('D')">D. Challenge outdated regulations publicly.</button><br><br>
+    <p>Client worried about your cat influencer compliance.</p>
+    <button onclick="scenario3('A')">A. Cuteness overrides compliance.</button><br><br>
+    <button onclick="scenario3('B')">B. Clarify their critical compliance rules.</button><br><br>
+    <button onclick="scenario3('C')">C. Pet has completed regulations training.</button><br><br>
+    <button onclick="scenario3('D')">D. Publicly challenge outdated regulations.</button><br><br>
+    <div id="scenario3-next"></div>
 
-    <div id="next-step-3"></div>
-
-    <!-- SCENARIO 4 -->
+    <!-- Scenario 4 -->
     <h2>Scenario 4: Sherlock For Hire</h2>
-    <p>Client concerned detective agency too flashy for structured culture:</p>
-    <button onclick="selectAnswer4('A')">A. Flashiness is better.</button><br><br>
-    <button onclick="selectAnswer4('B')">B. Request details about their processes.</button><br><br>
-    <button onclick="selectAnswer4('C')">C. Describe the AI-generated checklist.</button><br><br>
-    <button onclick="selectAnswer4('D')">D. Mention noise-canceling trench coats.</button><br><br>
-
-    <div id="next-step-4"></div>
+    <p>Client worries your detective style won't fit their culture.</p>
+    <button onclick="scenario4('A')">A. Flashy style is superior.</button><br><br>
+    <button onclick="scenario4('B')">B. Ask explicitly about their processes.</button><br><br>
+    <button onclick="scenario4('C')">C. Emphasize structured AI-checklists.</button><br><br>
+    <button onclick="scenario4('D')">D. Mention trench coats and glasses.</button><br><br>
+    <div id="scenario4-next"></div>
 
 <script>
-// SCENARIO 1 LOGIC
-function selectAnswer1(choice) {
-    let r = document.getElementById('next-step-1');
-    if(choice==='A'){r.innerHTML='A (Good Answer): Interesting—pivot to nostalgia appeal explicitly next.';}
-    else if(choice==='B'){r.innerHTML='B (Best Answer): Great explicit discovery approach!';}
-    else if(choice==='C'){r.innerHTML='C (Better Answer): Creative marketing angle, explicitly reconsider alien priorities.';}
-    else if(choice==='D'){r.innerHTML='D (Wrong Answer): Dishonesty problematic; explicitly address integrity immediately.';}
-}
+// Scenario 1 Logic
+function scenario1(choice){
+let s=document.getElementById('scenario1-next');
+if(choice=='A'){
+s.innerHTML=`<p>Aliens mention Xylo's glowing snacks. Response?</p>
+<button onclick="scenario1Feedback('Nostalgia emphasized—good differentiation explicitly.')">Emphasize dinos nostalgia.</button><br><br>
+<button onclick="scenario1Feedback('In-depth exploration—explicit client discovery best.')">Ask more about Xylo.</button>`;} 
+else if(choice=='B'){
+s.innerHTML=`<p>Aliens ask if Earth can match luminous intrigue. Answer?</p>
+<button onclick="scenario1Feedback('Creative tech angle appealing explicitly.')">Use LED tables idea.</button><br><br>
+<button onclick="scenario1Feedback('Interactive dining—explicit strong pitch.')">Demonstrate interactive methods.</button>`;}
+else{s.innerHTML="Poor choice. Explicitly reconsider credibility next time!";}}
 
-// SCENARIO 2 LOGIC
-function selectAnswer2(choice) {
-    let r = document.getElementById('next-step-2');
-    if(choice==='A'){r.innerHTML='A (Good Answer): Intriguing—clearly discuss drone feasibility explicitly next.';}
-    else if(choice==='B'){r.innerHTML='B (Better Answer): Good point explicitly about client convenience.';}
-    else if(choice==='C'){r.innerHTML='C (Best Answer): Detailed logistics highlight explicit client needs perfect.';}
-    else if(choice==='D'){r.innerHTML='D (Wrong Answer): Explicitly undervalues client concerns—be cautious.';}
-}
+function scenario1Feedback(msg){document.getElementById('scenario1-next').innerHTML=`Feedback: ${msg}`;}
 
-// SCENARIO 3 LOGIC
-function selectAnswer3(choice) {
-    let r = document.getElementById('next-step-3');
-    if(choice==='A'){r.innerHTML='A (Wrong Answer): Explicitly underestimating compliance risks.';}
-    else if(choice==='B'){r.innerHTML='B (Best Answer): Excellent explicit client-focused discovery.';}
-    else if(choice==='C'){r.innerHTML='C (Better Answer): clearly reassuring, but detail verification explicitly next.';}
-    else if(choice==='D'){r.innerHTML='D (Good Answer): Clearly ambitious but explicitly risky; consider carefully.';}
-}
+// Scenario 2 Logic
+function scenario2(choice){
+let s=document.getElementById('scenario2-next');
+if(choice=='C'){s.innerHTML="Best choice! Explicit data effectively addressed client's core concern!";}
+else if(choice=='A'){
+s.innerHTML=`<p>Client doubt drones feasibility. Response?</p>
+<button onclick="scenario2Feedback('Metrics clarified—explicit reassurance given.')">Clarify delivery metrics needed explicitly.</button><br><br>
+<button onclick="scenario2Feedback('Weakness: lack specifics. Be explicit!')">Assume reliability.</button>`;}
+else{s.innerHTML="Weak interaction. Next time explicitly focus on client priorities.";}}
 
-// SCENARIO 4 LOGIC
-function selectAnswer4(choice) {
-    let r = document.getElementById('next-step-4');
-    if(choice==='A'){r.innerHTML='A (Wrong Answer): Explicit disregard for structure problematic.';}
-    else if(choice==='B'){r.innerHTML='B (Best Answer): Clear explicit discovery on procedural preferences.';}
-    else if(choice==='C'){r.innerHTML='C (Better Answer): Clearly structured method, explicitly address specifics next.';}
-    else if(choice==='D'){r.innerHTML='D (Good Answer): Innovative but details explicitly required to further clarify.';}
-}
+function scenario2Feedback(msg){document.getElementById('scenario2-next').innerHTML=`Feedback: ${msg}`;}
+
+// Scenario 3 Logic
+function scenario3(choice){
+let s=document.getElementById('scenario3-next');
+if(choice=='B'){s.innerHTML="Best! Explicit discovery of client's compliance rules wisely undertaken!";}
+else if(choice=='C'){
+s.innerHTML=`<p>How proactively verify compliance?</p>
+<button onclick="scenario3Feedback('Best explicit reassurance: rigorous trng described.')">Rigorous training detailed explicitly.</button><br><br>
+<button onclick="scenario3Feedback('Weak: informal approach lacks explicit verification.')">Assume compliance naturally.</button>`;}
+else{s.innerHTML="Risky explicit stance lacking compliance seriousness explicitly.";}}  
+
+function scenario3Feedback(msg){document.getElementById('scenario3-next').innerHTML=`Feedback: ${msg}`;}
+
+// Scenario 4 Logic
+function scenario4(choice){
+let s=document.getElementById('scenario4-next');
+if(choice=='B'){s.innerHTML="Excellent explicit discovery of client's process needs!";}
+else if(choice=='C'){
+s.innerHTML=`<p>Client asks advantages over competitors. How respond?</p>
+<button onclick="scenario4Feedback('Excellent explicit clarity highlighting advantages.')">Emphasize flexibility explicitly.</button><br><br>
+<button onclick="scenario4Feedback('Weak point: overly informal.')">Say checklists mostly work.</button>`;}
+else{s.innerHTML="Weak or overly informal explicit response. Next time more methodical explicitly.";}}
+
+function scenario4Feedback(msg){document.getElementById('scenario4-next').innerHTML=`Feedback: ${msg}`;}
 </script>
 
 </body>
