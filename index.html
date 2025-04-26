@@ -68,11 +68,25 @@ function selectAnswer(choice) {
 
 <button onclick="selectAnswer2('D')">D. "Freshness probably isn't even a huge issue; cheese is cheese, and most customers can't tell the difference anyway."</button><br><br>
 
-<div id="answer-response-2"></div>
+<div id="next-step-2"></div>
 
 <script>
 function selectAnswer2(choice) {
-    document.getElementById('answer-response-2').innerHTML = "You selected answer " + choice + ". (We'll add adaptive logic next!)";
+    let responseArea = document.getElementById('next-step-2');
+
+    if(choice === 'A'){
+        responseArea.innerHTML = `
+        <p>You selected A (Good response). Creative! Let's now explicitly discuss and test logistics and business acumen in the next question clearly (Scenario 2 Question 2C).</p>`;
+    } else if(choice === 'B'){
+        responseArea.innerHTML = `
+        <p>You selected B (Better response). You made a confident point! Let's explicitly retest your discovery skills specifically on logistics clearly next (Scenario 2 Question 2B).</p>`;
+    } else if(choice === 'C'){
+        responseArea.innerHTML = `
+        <p>You selected C (Best response). Excellent! Your client's needs around logistics and freshness are explicitly addressed. Next, we'll dive deeper explicitly into compliance and competitive differentiation (Scenario 2 Question 2A).</p>`;
+    } else if(choice === 'D'){
+        responseArea.innerHTML = `
+        <p>You selected D (Wrong). This response explicitly disregards client concerns about quality. Let's explicitly correct this misunderstanding next by clarifying explicit freshness and reliability measures clearly (Scenario 2 Question 2D).</p>`;
+    }
 }
 </script>
 
@@ -91,11 +105,25 @@ function selectAnswer2(choice) {
 
 <button onclick="selectAnswer3('D')">D. "If regulations seem problematic, perhaps they're outdated. Why not publicly challenge them, especially backed by a superstar like Sir Mittens?"</button><br><br>
 
-<div id="answer-response-3"></div>
+<div id="next-step-3"></div>
 
 <script>
 function selectAnswer3(choice) {
-    document.getElementById('answer-response-3').innerHTML = "You selected answer " + choice + ". (We'll add adaptive logic next!)";
+    let responseArea = document.getElementById('next-step-3');
+
+    if(choice === 'A'){
+        responseArea.innerHTML = `
+        <p>You selected A (Wrong). Careful! Compliance and integrity are very important. Let's clarify explicitly compliance importance next (Scenario 3 Question 2D).</p>`;
+    } else if(choice === 'B'){
+        responseArea.innerHTML = `
+        <p>You selected B (Best response). Excellent discovery skills explicitly demonstrated. Next, explicitly differentiate explicitly from lower-cost competitors (Scenario 3 Question 2A).</p>`;
+    } else if(choice === 'C'){
+        responseArea.innerHTML = `
+        <p>You selected C (Better response). Good reassurance, but let's explicitly test further on compliance procedures explicitly next (Scenario 3 Question 2B).</p>`;
+    } else if(choice === 'D'){
+        responseArea.innerHTML = `
+        <p>You selected D (Good response). Bold and challenging! Explicitly address and clarify comfort level around regulatory concerns next (Scenario 3 Question 2C).</p>`;
+    }
 }
 </script>
 
@@ -114,11 +142,25 @@ function selectAnswer3(choice) {
 
 <button onclick="selectAnswer4('D')">D. "Our agency offers noise-canceling trench coats and whisper-friendly magnifying glasses—perfectly suited to formal and orderly environments."</button><br><br>
 
-<div id="answer-response-4"></div>
+<div id="next-step-4"></div>
 
 <script>
 function selectAnswer4(choice) {
-    document.getElementById('answer-response-4').innerHTML = "You selected answer " + choice + ". (We'll add adaptive logic next!)";
+    let responseArea = document.getElementById('next-step-4');
+
+    if(choice === 'A'){
+        responseArea.innerHTML = `
+        <p>You selected A (Wrong). Flashy, but explicitly inappropriate for client concern. Explicitly emphasize professional conduct next clearly (Scenario 4 Question 2D).</p>`;
+    } else if(choice === 'B'){
+        responseArea.innerHTML = `
+        <p>You selected B (Best response). Nicely done! Clear discovery explicitly aligning client expectations. Next, explicitly demonstrate reliability methods explicitly (Scenario 4 Question 2A).</p>`;
+    } else if(choice === 'C'){
+        responseArea.innerHTML = `
+        <p>You selected C (Good response). Clearly structured approach, but could use explicitly deeper discovery explicitly next on competitor differentiation (Scenario 4 Question 2C).</p>`;
+    } else if(choice === 'D'){
+        responseArea.innerHTML = `
+        <p>You selected D (Better response). Creative solution explicitly, but lacking explicit detailed discovery explicitly. Let's explicitly clarify client-specific investigative challenges next explicitly (Scenario 4 Question 2B).</p>`;
+    }
 }
 </script>
     
