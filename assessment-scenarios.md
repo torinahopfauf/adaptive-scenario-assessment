@@ -55,4 +55,23 @@ D. "If regulations seem problematic, perhaps they're outdated. Why not publicly 
 
 C. "Freshness and reliability matter most to you. Would it help if I share detailed data showing our temperature-controlled supply chain and specific logistics processes we use?"
 
+## Scenario 4: Sherlock For Hire
+*(Content coming soon)*
+
+### Scenario 4: Sherlock For Hire (Question 1)
+
+A client worries your freelance detective style is "too energetic and flashy" to fit the structured culture at their formal company. They directly express concern during your call:
+
+**"Your energy seems great, but we're an established and formal company—we need someone methodical and orderly. How can we be sure your investigative approach clearly fits our structured way of working?"**
+
+How do you respond?
+
+A. "Strict culture? You're hiring Sherlock Holmes, not a librarian! Flashy is clearly better anyway!"
+
+B. "That's understandable. Could you clarify specifically the investigative rules and processes that your company considers most essential?"
+
+C. "Every detective approach comes standard with an AI-generated detective checklist. You'll love the quiet and predictable structure it provides."
+
+D. "Our agency offers noise-canceling trench coats and whisper-friendly magnifying glasses—perfectly suited to formal and orderly environments."
+
 D. "Freshness probably isn't even a huge issue; cheese is cheese, and most customers can't tell the difference anyway."
