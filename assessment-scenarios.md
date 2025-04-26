@@ -33,6 +33,26 @@ A. "Freshness? Wait until you see our custom-developed cheese-drones—tiny remo
 
 B. "You prefer driving across town in rain and traffic jams to pick up cheese? Evolution clearly favors innovation over inconveniences—do you want to be left behind?"
 
+
+## Scenario 3: Celebrity Pet Influencer Agency
+*(Content coming soon)*
+
+### Scenario 3: Celebrity Pet Influencer Agency (Question 1)
+
+You're showcasing your latest influencer-cat star ("Sir Mittens The Bold") to MegaMilk Dairy, a brand cautiously evaluating celebrity pet endorsements. Their Marketing Director is skeptical and directly says:
+
+**"Cats are cute on Instagram, but we're concerned your pet influencer won't clearly meet our strictly regulated dairy-industry marketing guidelines. How could a cat possibly stay compliant with those regulations?"**
+
+How do you best respond?
+
+A. "Rules exist mostly on paper. People love animals—Sir Mittens' cuteness clearly overrides minor compliance details. Let's focus more on his engagement numbers."
+
+B. "Let me ensure I clearly understand your regulatory concerns—could you walk me through the critical compliance rules your brand must meet, and why?"
+
+C. "Rest assured, Sir Mittens already completed our proprietary 'Pet Regulations Training Program.' Compliance training for animal influencers comes standard in our brand partnership packages."
+
+D. "If regulations seem problematic, perhaps they're outdated. Why not publicly challenge them, especially backed by a superstar like Sir Mittens?"
+
 C. "Freshness and reliability matter most to you. Would it help if I share detailed data showing our temperature-controlled supply chain and specific logistics processes we use?"
 
 D. "Freshness probably isn't even a huge issue; cheese is cheese, and most customers can't tell the difference anyway."
