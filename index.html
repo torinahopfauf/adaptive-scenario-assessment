@@ -35,19 +35,131 @@ function selectAnswer(choice) {
     if(choice === 'A'){
         responseArea.innerHTML = `
         <p>You selected A (Good response). Since you chose a creative but partially informed answer, let's move to a question focusing more clearly on Discovery and Competitive Landscape...</p>
-        <p>[Here you'll insert Scenario 1 - Question 2C clearly next]</p>`;
+        <p><strong>Scenario 1: Question 2C (Follow-up to Good Answer "A")</strong></p>
+
+<p>The aliens reply playfully: "Cute dinosaur nuggets? Planet Xylo already markets edible crystal nuggets that glow. Can Earth's dinosaur nuggets really compete with that?" How would you clearly respond?</p>
+
+<button onclick="scenario1Question2C('A')">A. "Probably not, honestly—Xylo sounds amazing."</button><br><br>
+
+<button onclick="scenario1Question2C('B')">B. "Interesting! Could you share specifically what impresses you about Xylo's crystal nuggets? Clearly understanding this will help us better position Earth's offerings."</button><br><br>
+
+<button onclick="scenario1Question2C('C')">C. "Our dinosaur-shaped nuggets cater explicitly to nostalgia—clearly differentiating strongly from Xylo's crystal nuggets."</button><br><br>
+
+<button onclick="scenario1Question2C('D')">D. "Our cooking methods involve meteor-shaped sauce dispensers, offering immersive dinosaur-extinction experiences that crystal T-Rexes can't match."</button><br><br>
+
+<div id="response-1-2C"></div>
+
+<script>
+function scenario1Question2C(choice){
+   let responseArea = document.getElementById('response-1-2C');
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<p>You selected A (Wrong)—Too dismissive explicitly; clarify explicitly Earth's competitive advantages next.</p>";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<p>You selected B (Best)—Perfect explicit discovery to differentiate further!</p>";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<p>You selected C (Good)—Relevant differentiation but limited; clarify further explicitly next.</p>";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<p>You selected D (Better)—Creative and memorable; explicitly reinforce competitive advantage next.</p>";
+   }
+}
+</script>;
     } else if(choice === 'B'){
         responseArea.innerHTML = `
         <p>You selected B (Best response). Great job. Now let's dive deeper into Business Acumen and Product Knowledge...</p>
-        <p>[Here you'll insert Scenario 1 - Question 2A clearly next]</p>`;
+       <p><strong>Scenario 1: Question 2A (Follow-up to Best Answer "B")</strong></p>
+
+<p>The aliens respond positively to your inquiry, "We're particularly impressed by luminous foods and interactive dining atmospheres on other planets. Could Earth's offerings realistically match this?" How will you clearly reply?</p>
+
+<button onclick="scenario1Question2A('A')">A. "Not exactly—human food mostly ranges between beige and brown, but taste is more important than appearance!"</button><br><br>
+
+<button onclick="scenario1Question2A('B')">B. "Absolutely. Let me briefly demonstrate Earth's advanced, interactive dining experiences available across diverse cultures."</button><br><br>
+
+<button onclick="scenario1Question2A('C')">C. "Our meals glow if we put enough LEDs into dining tables, there might be a minor risk of electrocution—but it's exciting!"</button><br><br>
+
+<button onclick="scenario1Question2A('D')">D. "We have brightly colored ketchup and rainbow cupcakes, which are dazzling enough even without actual illumination."</button><br><br>
+
+<div id="response-1-2A"></div>
+
+<script>
+function scenario1Question2A(choice){
+   let responseArea = document.getElementById('response-1-2A');
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<p>You selected A (Wrong response)—This feels dismissive: explicitly address client interests clearly next.</p>";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<p>You selected B (Best response)—Well done, explicitly demonstrating Earth's offerings effectively!</p>";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<p>You selected C (Better response)—Creative, but explicitly acknowledge safety concerns next.</p>";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<p>You selected D (Good response)—Visually appealing but explicitly limited: explicitly deepen differentiation next clearly.</p>";
+   }
+}
+</script>;
     } else if(choice === 'C'){
         responseArea.innerHTML = `
         <p>You selected C (Better response). Not bad! Let's explicitly retest your discovery skill more clearly.</p>
-        <p>[Here you'll insert Scenario 1 - Question 2B clearly next]</p>`;
+       <p><strong>Scenario 1: Question 2B (Follow-up to Better Answer "C")</strong></p>
+
+<p>The aliens express some uncertainty regarding your culinary entertainment options: "Your cooking entertainment sounds amusing, but can Earth's offerings truly comply with our strict dietary energy regulations? We require real-time energy readings during meals." How do you respond clearly?</p>
+
+<button onclick="scenario1Question2B('A')">A. "Humans probably invented some energy sensors recently—I wouldn't worry about compliance details."</button><br><br>
+
+<button onclick="scenario1Question2B('B')">B. "Could you clarify exactly how your dietary regulations measure meal energy levels? Understanding this allows us to find the best Earth-based solution."</button><br><br>
+
+<button onclick="scenario1Question2B('C')">C. "We stream detailed energy compliance ratings in tiny disclaimers during cooking shows—you could pause playback to read carefully."</button><br><br>
+
+<button onclick="scenario1Question2B('D')">D. "Our chefs verbally promise to never exceed recommended energy levels—trust us."</button><br><br>
+
+<div id="response-1-2B"></div>
+
+<script>
+function scenario1Question2B(choice){
+   let responseArea = document.getElementById('response-1-2B');
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<p>You selected A (Wrong)—You disregarded compliance explicitly. Address this clearly next.</p>";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<p>You selected B (Best)—Excellent explicit discovery approach on compliance!</p>";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<p>You selected C (Good)—Creative, but explicitly impractical; clarify explicitly next.</p>";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<p>You selected D (Better)—Good reassurance but explicitly lacks detail; clarify explicitly next.</p>";
+   }
+}
+</script>
     } else if(choice === 'D'){
         responseArea.innerHTML = `
         <p>You selected D (Wrong). Integrity and honesty are critical.</p>
-        <p>[Here you'll insert Scenario 1 - Question 2D clearly next]</p>`;
+      <p><strong>Scenario 1: Question 2D (Follow-up to Wrong Answer "D")</strong></p>
+
+<p>The aliens immediately challenge your false claim: "We clearly have data showing Earth's edible offerings aren't luminous or diamond-based. Honesty matters greatly. How can we trust Earth's offerings going forward?" How do you respond?</p>
+
+<button onclick="scenario1Question2D('A')">A. "Trust and accuracy are overrated compared to overall excitement, right?"</button><br><br>
+
+<button onclick="scenario1Question2D('B')">B. "You're correct—integrity matters explicitly. Let's start fresh: Could you outline exactly what culinary qualities are essential?"</button><br><br>
+
+<button onclick="scenario1Question2D('C')">C. "I apologize—that was intended as humorous marketing. On Earth humor and official product offerings are clearly separated."</button><br><br>
+
+<button onclick="scenario1Question2D('D')">D. "It's not important—we're superior anyway in most other categories."</button><br><br>
+
+<div id="response-1-2D"></div>
+
+<script>
+function scenario1Question2D(choice){
+   let responseArea = document.getElementById('response-1-2D');
+
+   if(choice === 'A'){
+      responseArea.innerHTML = "<p>You selected A (Wrong)—Explicit disregard for integrity; correct explicitly next.</p>";
+   } else if(choice === 'B'){
+      responseArea.innerHTML = "<p>You selected B (Best)—Excellent explicit recovery emphasizing integrity and discovery!</p>";
+   } else if(choice === 'C'){
+      responseArea.innerHTML = "<p>You selected C (Better)—Good explicit apology but lacks full corrective clarity; address explicitly.</p>";
+   } else if(choice === 'D'){
+      responseArea.innerHTML = "<p>You selected D (Good)—Defensive and explicit; address explicitly next clearly.</p>";
+   }
+}
+</script>
     }
 }
 </script>
