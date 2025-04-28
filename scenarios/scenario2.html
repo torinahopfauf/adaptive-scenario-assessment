@@ -15,7 +15,7 @@
 <button onclick="q1('A')">"Our freshness analytics and advanced logistics tracking guarantee cheese arrives reliably fresh."</button><br><br>
 <button onclick="q1('B')">"Could you clearly define what freshness levels or criteria matter most to your standards?"</button><br><br>
 <button onclick="q1('C')">"We deliver cheese using drones to ensure precise freshness levels at delivery."</button><br><br>
-<button onclick="q1('D')">"Allow us to demonstrate exactly and explicitly how we handle cheese freshness and reliability."</button><br><br>
+<button onclick="q1('D')">"Allow us to demonstrate exactly how we handle cheese freshness and reliability."</button><br><br>
 </div>
 
 <script>
@@ -35,7 +35,7 @@ scenario.innerHTML=`
 <p>They respond: "Our concerns revolve around precise temperature control and strict delivery timelines."</p>
 <p><strong>What specifically would your next step or response be?</strong></p>
 <button onclick="competencies.Tools++;competencies.Business++;q3()">"We provide detailed analytics proving our strict temperature and timing controls."</button><br><br>
-<button onclick="competencies.Discovery++;q3()">"Could you explicitly detail your exact expectations about temperatures and timing?"</button><br><br>
+<button onclick="competencies.Discovery++;q3()">"Could you detail your exact expectations about temperatures and timing?"</button><br><br>
 <button onclick="competencies.Competitive++;q3()">"Our process clearly surpasses local alternatives in temperature maintenance and reliability."</button><br><br>
 <button onclick="competencies.Engagement--;q3()">"We might currently face some minor challenges meeting exact timing requirements."</button><br><br>`;
 }
@@ -44,7 +44,7 @@ function q3(){
 scenario.innerHTML=`
 <p>Client continues: "How precisely do you ensure and validate premium-quality freshness consistently?"</p>
 <p><strong>Choose the most appropriate next approach:</strong></p>
-<button onclick="competencies.Tools++;competencies.Business++;q4()">"We clearly demonstrate our freshness validation analytics explicitly detailed through data."</button><br><br>
+<button onclick="competencies.Tools++;competencies.Business++;q4()">"We clearly demonstrate our freshness validation analytics detailed through data."</button><br><br>
 <button onclick="competencies.Discovery++;q4()">"Can you specify exactly what aspects of freshness validation matter most to your decision?"</button><br><br>
 <button onclick="competencies.Tools--;q4()">"Our validation methods currently are in the process of improvement."</button><br><br>
 <button onclick="competencies.Engagement--;q4()">"Freshness validation may not be absolutely essential if quality is otherwise high."</button><br><br>`;
@@ -63,11 +63,11 @@ scenario.innerHTML=`
 // Final universal adaptive question carefully posed explicitly
 function q5(){
 scenario.innerHTML=`
-<p>"Finally, what's the single explicit next step you'd recommend right now to affirm our decision?"</p>
-<p><strong>Clearly select your best final recommendation explicitly:</strong></p>
-<button onclick="competencies.Business++;finalFeedback()">"Offer explicitly detailed business plans with clear measurable freshness assurance."</button><br><br>
+<p>"Finally, what's the single next step you'd recommend right now to affirm our decision?"</p>
+<p><strong>Clearly select your best final recommendation :</strong></p>
+<button onclick="competencies.Business++;finalFeedback()">"Offer detailed business plans with clear measurable freshness assurance."</button><br><br>
 <button onclick="competencies.Demoing++;finalFeedback()">"Immediately organize professionally tailored interactive cheese freshness demo."</button><br><br>
-<button onclick="competencies.Competitive++;finalFeedback()">"Deliver comprehensive competitor analysis demonstrating explicitly our freshness reliability advantage."</button><br><br>
+<button onclick="competencies.Competitive++;finalFeedback()">"Deliver comprehensive competitor analysis demonstrating our freshness reliability advantage."</button><br><br>
 <button onclick="competencies.Tools++;finalFeedback()">"Provide explicit analytic review sessions validating cheese freshness reliability."</button><br><br>`;
 }
 
