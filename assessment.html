@@ -9,36 +9,36 @@
 <div id="container" style="font-family:Arial,sans-serif;max-width:700px;margin:auto;padding:20px;line-height:1.6;">
   <h2>Your Sales Competency Assessment Results</h2>
 
-  <p>We've carefully assessed your answers from the two completed scenarios. Here are your cumulative results explicitly displayed:</p>
+  <p>We've carefully assessed your answers from the two completed scenarios. Here are your cumulative results displayed:</p>
 
   <div id="scoreSummary"></div>
 
-  <h3>Personalized Recommendations Explicitly for You:</h3>
+  <h3>Personalized Recommendations for You:</h3>
   <div id="recommendations"></div>
 
   <button onclick="restartAssessment()">Restart Assessment</button>
 </div>
 
 <script>
-  //Retrieve scores from both scenarios clearly and explicitly
+  //Retrieve scores from both scenarios clearly
   let scenario1 = JSON.parse(sessionStorage.getItem('scenario1Scores') || '{}');
   let scenario2 = JSON.parse(sessionStorage.getItem('scenario2Scores') || '{}');
 
-  //Define competencies explicitly and sum scores safely
+  //Define competencies and sum scores safely
   let competencies = {Discovery:0, Competitive:0, Demoing:0, Tools:0, Business:0, Engagement:0};
 
   for(let comp in competencies){
     competencies[comp] = (scenario1[comp] || 0) + (scenario2[comp] || 0);
   }
 
-  //Function explicitly defining skill-levels
+  //Function defining skill-levels
   function assessLevel(score){
     if(score >= 6) return "Advanced";
     if(score >= 3) return "Intermediate";
     return "Beginner";
   }
 
-  //Display competency scores explicitly
+  //Display competency scores 
   let resultsHTML = "<ul>";
   for(let comp in competencies){
     resultsHTML += `<li><strong>${comp}:</strong> ${competencies[comp]} points (${assessLevel(competencies[comp])})</li>`;
@@ -46,29 +46,29 @@
   resultsHTML += "</ul>";
   document.getElementById('scoreSummary').innerHTML = resultsHTML;
 
-  //Determine strongest and weakest competencies explicitly
+  //Determine strongest and weakest competencies
   let highestSkill = Object.keys(competencies).reduce((a,b) => competencies[a]>competencies[b] ? a : b);
   let lowestSkill = Object.keys(competencies).reduce((a,b) => competencies[a]<competencies[b] ? a : b);
 
   //Explicit tailored strong/weak skills advice
   let recommendations = {
-    Discovery: "Deepen your discovery and client needs analysis explicitly through targeted questioning training clearly.",
-    Competitive: "Hone competitive analysis explicitly with further explicit competitive positioning skills training.",
-    Demoing: "Enhance your product demonstration skills explicitly to increase customer engagement clearly.",
-    Tools: "Strengthen your proficiency in analytics and sales tools explicitly with specialized training clearly.",
-    Business: "Enhance business acumen explicitly by focusing on clearly aligning products/services with business impact explicitly.",
-    Engagement: "Improve your professional communication explicitly with targeted client engagement training clearly."
+    Discovery: "Deepen your discovery and client needs analysis  through targeted questioning training clearly.",
+    Competitive: "Hone competitive analysis with further explicit competitive positioning skills training.",
+    Demoing: "Enhance your product demonstration skills to increase customer engagement clearly.",
+    Tools: "Strengthen your proficiency in analytics and sales tools with specialized training clearly.",
+    Business: "Enhance business acumen by focusing on clearly aligning products/services with business impact.",
+    Engagement: "Improve your professional communication with targeted client engagement training clearly."
   };
 
-  //Present explicit recommendations explicitly clearly outlined
+  //Present explicit recommendations clearly outlined
   let recommendationsHTML = `
-  <p><strong>Your top sales competency explicitly is ${highestSkill}.</strong><br>${recommendations[highestSkill]}</p>
-  <p><strong>Competency explicitly identified most clearly for improvement: ${lowestSkill}.</strong><br>${recommendations[lowestSkill]}</p>
+  <p><strong>Your top sales competency is ${highestSkill}.</strong><br>${recommendations[highestSkill]}</p>
+  <p><strong>Competency identified most clearly for improvement: ${lowestSkill}.</strong><br>${recommendations[lowestSkill]}</p>
   `;
   
   document.getElementById('recommendations').innerHTML = recommendationsHTML;
 
-  //Explicitly restart assessment, clearing session storage explicitly clearly
+  //Restart assessment, clearing session storage clearly
   function restartAssessment(){
     sessionStorage.clear();
     location.href = 'index.html';
