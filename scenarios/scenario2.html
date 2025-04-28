@@ -85,9 +85,9 @@ scenario.innerHTML=`<p><em>${messages[strongest]}</em></p>
 <button onclick="nextScenario()">Proceed to Assessment</button>`;
 sessionStorage.setItem('scenario2Scores',JSON.stringify(competencies));
 }
-
 function nextScenario(){
-  location.href='../assessment.html';
+   location.href = '../assessment.html'; 
+
 }
 }
 </script>
