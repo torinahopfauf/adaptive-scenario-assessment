@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Your Personal Competency Assessment</title>
+</head>
+<body>
+<div id="results" style="font-family:Arial,sans-serif;max-width:700px;line-height:1.5;margin:auto;padding:20px;">
+<h2>Your Sales Competency Assessment Results</h2>
+<p>Based on your responses, we've evaluated your skills across key sales competencies:</p>
+<div id="competencyResults"></div>
 
+<h3>Personalized Recommendations for You:</h3>
+<div id="recommendations"></div>
+
+<button onclick="restartAssessment()">Restart Assessment</button>
+</div>
+
+<script>
+// Retrieve and combine stored scenario scores
+let scenario1Scores = JSON.parse(sessionStorage.getItem('scenario1Scores') || '{}');
+let scenario2Scores = JSON.parse(sessionStorage.getItem('scenario2Scores') || '{}');
+
+// Initialize overall competency totals
+let totalCompetencies = {Discovery:0,Competitive:0,Demoing:0,Tools:0,Business:0,Engagement:0};
+
+// combine both scenarios scores carefully and explicitly
+for (let key in totalCompetencies) {
+  totalCompetencies[key] = (scenario1Scores[key] || 0) + (scenario2Scores[key] || 0);
+}
+
+// Competency Level Descriptions
+function getLevel(score) {
+  if(score>=4) return "Advanced";
+  if(score===3) return "Intermediate";
+  return "Beginner";
+}
+
+// Display Competency Scores Clearly
+let resultsHTML='<ul>';
+for(let competency in totalCompetencies){
+  resultsHTML+=`<li><strong>${competency}</strong>: ${totalCompetencies[competency]} (${getLevel(totalCompetencies[competency])})</li>`;
+}
+resultsHTML+='</ul>';
+
+document.getElementById('competencyResults').innerHTML=resultsHTML;
+
+// Tailored Recommendations based on strongest and weakest competencies
+let highestComp=Object.keys(totalCompetencies).reduce((a,b)=>totalCompetencies[a]>totalCompetencies[b]?a:b);
+let lowestComp=Object.keys(totalCompetencies).reduce((a,b)=>totalCompetencies[a]<totalCompetencies[b]?a:b);
+
+// Recommendations messages explicitly crafted
+let advice={
+  Discovery:"Enhance client interaction skills further with specialized discovery training sessions.",
+  Competitive:"Continue reinforcing competitive analysis skills to maintain market leadership.",
+  Demoing:"Refine product demonstration executions consistently to maximize customer engagement.",
+  Tools:"Further develop analytics tools proficiency explicitly through advanced tools workshops.",
+  Business:"Continue deepening business acumen explicitly, especially in aligning services/products to customer ROI.",
+  Engagement:"Improve client communication explicitly through professional engagement and client care training clearly."
+};
+
+// Display personalized recommendations clearly
+let recommendationsHTML=`
+  <p><strong>Your top strength:</strong> ${highestComp} (${getLevel(totalCompetencies[highestComp])}). "${advice[highestComp]}"</p>
+  <p><strong>Your top area for improvement:</strong> ${lowestComp} (${getLevel(totalCompetencies[lowestComp])}). "${advice[lowestComp]}"</p>
+`;
+
+document.getElementById('recommendations').innerHTML=recommendationsHTML;
+
+// Restart assessment functionality to clearly refresh the session
+function restartAssessment(){
+  sessionStorage.clear();
+  location.href='index.html'; // return to your initial homepage/start page
+}
+</script>
+
+</body>
+</html>
