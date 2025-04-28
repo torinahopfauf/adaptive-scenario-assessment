@@ -1,31 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenario 2: The Cheesy Startup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenario 2: The Cheesy Startup</title>
 </head>
 <body>
+<div id="scenario" style="font-family:Arial, sans-serif; line-height:1.5; max-width:700px; margin:auto; padding:20px;">
 <h2>Scenario 2: The Cheesy Startup</h2>
+<p>Your exotic cheese startup "Cheesy Wonders" markets rare and premium cheeses online. A major client, Space Sandwich Inc., voices skepticism about reliability and freshness:</p>
+<blockquote>"We're intrigued, but delivering premium cheese reliably seems challenging. Local markets offer guaranteed freshness. How can an online provider genuinely match that?"</blockquote>
 
-<p>Your online exotic cheese startup, "Cheesy Wonders," competes with traditional local cheese shops. A large client, Cheese Sandwich Inc., worries about freshness and reliability. They say:</p>
+<p><strong>How would you respond initially to build confidence clearly?</strong></p>
+<button onclick="q1('A')">"We offer cutting-edge freshness-tracking logistics analytics ensuring clear reliability."</button><br><br>
+<button onclick="q1('B')">"Would you describe specifically what freshness standards are crucial to you?"</button><br><br>
+<button onclick="q1('C')">"Our cheese drone delivery system precisely assures freshness—with a touch of cheese innovation."</button><br><br>
+<button onclick="q1('D')">"Let us provide concrete demonstrations of our freshness guarantees in action."</button><br><br>
+</div>
 
-<blockquote><strong>"Your cheeses look exciting, but we're skeptical about freshness and delivery reliability compared to established local cheese shops. Why risk buying cheeses online?"</strong></blockquote>
-
-<!-- Initial Scenario 2 answer buttons -->
-<button onclick="selectAnswer('A')">A: "Freshness? Wait until you see our custom-developed cheese-drones—tiny helicopters delivering cheese directly onto your plate!"</button><br><br>
-<button onclick="selectAnswer('B')">B: "Customers prefer avoiding town commutes, traffic, and weather conditions—innovation trumps inconvenience every time."</button><br><br>
-<button onclick="selectAnswer('C')">C: "Would detailed logistics data demonstrating temperature control and reliability help reassure you?"</button><br><br>
-<button onclick="selectAnswer('D')">D: "Freshness isn't a huge issue; cheese is just cheese, after all."</button><br><br>
-
-<div id="adaptiveContent"></div>
-<br>
-<a href="../index.html">Return Home</a>
-
-<!-- JavaScript adaptive logic will be added next clearly -->
 <script>
-  //To be added carefully in next step
-</script>
+let scenario=document.getElementById('scenario');
+let competencies={Discovery:0,Competitive:0,Demoing:0,Tools:0,Business:0,Engagement:0};
 
+function q1(choice){
+if(choice==='A'){competencies.Tools++; competencies.Business++; }
+else if(choice==='B'){competencies.Discovery++; competencies.Engagement++;}
+else if(choice==='C'){competencies.Competitive++; competencies.Demoing++; }
+else if(choice==='D'){competencies.Demoing++; competencies.Tools++;}
+q2();
+}
+
+function q2(){
+scenario.innerHTML=`
+<p>Client responds: "Our company specifically values clearly defined temperature control and timing assurances."</p>
+<p><strong>What would your next proactive question or statement be?</strong></p>
+<button onclick="competencies.Tools++; competencies.Business++; q3()">"We monitor precise temperature and timing metrics—let me show you a detailed analytics breakdown."</button><br><br>
+<button onclick="competencies.Discovery++; q3()">"Can you tell me the exact temperature and timing standards you require specifically?"</button><br><br>
+<button onclick="competencies.Competitive++; q3()">"Our reliability exceeds local competitors clearly—here's how."</button><br><br>
+<button onclick="competencies.Demoing--; q3()">"Currently, our processes might not fully match your exact timing needs."</button><br><br>`;
+}
+
+function q3(){
+scenario.innerHTML=`
+<p>The client continues: "How exactly do you validate that customers consistently receive premium-quality freshness?"</p>
+<p><strong>What clear response or additional question would you use now?</strong></p>
+<button onclick="competencies.Tools++;competencies.Business++;q4()">"Here's our explicit freshness validation process, clearly demonstrated through analytics."</button><br><br>
+<button onclick="competencies.Discovery++;q4()">"Could you clarify exactly what freshness validation methods matter most to your company?"</button><br><br>
+<button onclick="competencies.Tools--;q4()">"Our validation methods are still developing clearly."</button><br><br>
+<button onclick="competencies.Engagement--;q4()">"Validation isn't absolutely essential; taste ultimately verifying freshness."</button><br><br>`;
+}
+
+function q4(){
+scenario.innerHTML=`
+<p>Considering moving forward, the client asks: "How specifically would your startup help ensure our decision to buy online cheese is successful?"</p>
+<p><strong>Choose the best next clear step or response:</strong></p>
+<button onclick="competencies.Business++;competencies.Competitive++;q5()">"We'll provide explicit comparative analysis showing clear competitive advantage."</button><br><br>
+<button onclick="competencies.Demoing++;competencies.Engagement++;q5()">"Immediate personalized cheese-delivery demo arranged precisely to your standards."</button><br><br>
+<button onclick="competencies.Tools++;q5()">"Direct access provided to your team for exploring specialized freshness-validation analytics tools."</button><br><br>
+<button onclick="competencies.Discovery++;competencies.Engagement++;q5()">"Detailed discovery session clearly defining your further needs and ensuring alignment explicitly."</button><br><br>`;
+}
+
+function q5(){
+scenario.innerHTML=`
+<p>"What's the most effective next step you'd clearly recommend right now to confirm our decision about Cheesy Wonders?"</p>
+<button onclick="competencies.Business++;finalFeedback()">Offer explicit business planning session outlining measurable cheese freshness assurances.</button><br><br>
+<button onclick="competencies.Demoing++;finalFeedback()">Immediately set up interactive delivery demonstrations tailored distinctly to their needs.</button><br><br>
+<button onclick="competencies.Competitive++;finalFeedback()">Present a clearly detailed competitor analysis proving Cheesy Wonders' distinct advantages.</button><br><br>
+<button onclick="competencies.Tools++;finalFeedback()">Arrange explicit analytics-focused sessions to validate freshness quality clearly.</button><br><br>`;
+}
+
+function finalFeedback(){
+let strongest=Object.keys(competencies).reduce((a,b)=>competencies[a]>competencies[b]?a:b);
+let messages={
+Discovery:"Space Sandwich Inc. clearly values your investigative discovery skills—they know you genuinely grasp their cheesy dreams!",
+Competitive:"You've successfully convinced them that Cheesy Wonders outshines all other cheese competitors clearly!",
+Demoing:"Your engaging presentations have won them over—they are itching to order your cheesy goodness immediately!",
+Tools:"They think your analytical capabilities are awe-inspiring—trust comes clearly from your cheese data!",
+Business:"Your business acumen clearly convinces them—Cheesy Wonders seems like a reliably tasty cheesy investment!",
+Engagement:"Your professionalism and care have left them surprisingly excited—they're cheese fans for life now!"
+};
+scenario.innerHTML=`<p><em>${messages[strongest]}</em></p>
+<p>Scenario 2 responses carefully recorded successfully.</p>
+<button onclick="nextScenario()">Continue to Assessment</button>`;
+sessionStorage.setItem('scenario2Scores',JSON.stringify(competencies));
+}
+
+function nextScenario(){
+location.href='assessment.html';
+}
+</script>
 </body>
 </html>
